@@ -1,0 +1,220 @@
+// ERRORS
+export const EMPTY_ERRORS = 'EMPTY_ERRORS';
+export const GET_ERRORS = 'GET_ERRORS';
+
+// ADMIN
+export const ADD_ADMIN = 'ADD_ADMIN';
+export const BEFORE_ADMIN = 'BEFORE_ADMIN';
+export const LOGIN_ADMIN = 'LOGIN_ADMIN';
+export const GET_ADMIN = 'GET_ADMIN';
+export const GET_ADMINS = 'GET_ADMINS';
+export const UPDATE_ADMIN = 'UPDATE_ADMIN';
+export const DELETE_ADMIN = 'DELETE_ADMIN';
+export const UPDATE_PASSWORD = 'UPDATE_PASSWORD';
+export const FORGOT_PASSWORD = 'FORGOT_PASSWORD';
+export const RESET_PASSWORD = 'RESET_PASSWORD';
+export const GET_USER_VERIFY = 'GET_USER_VERIFY';
+export const BEFORE_USER_VERIFY = 'BEFORE_USER_VERIFY';
+
+
+// ROLES
+export const ADD_ROLE = 'ADD_ROLE';
+export const UPDATE_ROLE = 'UPDATE_ROLE';
+export const DELETE_ROLE = 'DELETE_ROLE';
+export const GET_ROLE = 'GET_ROLE';
+export const GET_ROLES = 'GET_ROLES';
+export const BEFORE_ROLE = 'BEFORE_ROLE';
+export const BEFORE_PERMISSION = 'BEFORE_PERMISSION';
+export const GET_PERMISSION = 'GET_PERMISSION';
+export const SET_LOADER_ROLE = 'SET_LOADER_ROLE';
+export const REMOVE_LOADER_ROLE = 'REMOVE_LOADER_ROLE';
+
+// USERS
+export const BEFORE_USER = 'BEFORE_USER';
+export const GET_USERS = 'GET_USERS';
+export const GET_USER = 'GET_USER';
+export const UPSERT_USER = 'UPSERT_USER';
+export const DELETE_USER = 'DELETE_USER';
+
+// Emails
+export const GET_EMAILS = 'GET_EMAILS';
+export const GET_EMAIL = 'GET_EMAIL';
+export const BEFORE_EMAIL = 'BEFORE_EMAIL';
+export const UPDATE_EMAIL = 'UPDATE_EMAIL';
+
+// Settings
+export const GET_SETTINGS = 'GET_SETTINGS';
+export const EDIT_SETTINGS = 'EDIT_SETTINGS';
+export const BEFORE_SETTINGS = 'BEFORE_SETTINGS';
+export const UPDATE_LEVEL_SETTINGS = 'UPDATE_LEVEL_SETTINGS';
+export const LEVEL_SETTINGS = 'LEVEL_SETTINGS';
+export const UPDATE_TROPHY_SETTINGS = 'UPDATE_TROPHY_SETTINGS';
+export const TROPHY_SETTINGS = 'TROPHY_SETTINGS';
+
+// FAQS
+export const GET_FAQS = 'GET_FAQS'
+export const BEFORE_FAQ = 'BEFORE_FAQ'
+export const DELETE_FAQ = 'DELETE_FAQ'
+export const CREATE_FAQ = 'CREATE_FAQ'
+export const GET_FAQ = 'GET_FAQ'
+export const EDIT_FAQ = 'EDIT_FAQ'
+
+export const GET_CATEGORIES = 'GET_CATEGORIES'
+export const UPSERT_CATEGORY = 'UPSERT_CATEGORY'
+export const BEFORE_CATEGORY = 'BEFORE_CATEGORY'
+export const DELETE_CATEGORY = 'DELETE_CATEGORY'
+
+// CONTACTS
+export const BEFORE_CONTACT = 'BEFORE_CONTACT';
+export const GET_CONTACTS = 'GET_CONTACTS';
+export const EDIT_CONTACT = 'EDIT_CONTACT';
+
+// ACTIVITY
+export const BEFORE_ACTIVITY = 'BEFORE_ACTIVITY'
+export const GET_ACTIVITIES = 'GET_ACTIVITIES'
+export const SEARCH_ACTIVITY = 'SEARCH_ACTIVITY'
+
+// DASHBOARD
+export const BEFORE_DASHBOARD = 'BEFORE_DASHBOARD'
+export const GET_DASHBOARD = 'GET_DASHBOARD'
+
+//CONTENT MANAGEMENT
+export const GET_CONTENT_PAGE = 'GET_CONTENT_PAGE'
+export const GET_CONTENT_PAGES = 'GET_CONTENT_PAGES'
+export const EDIT_CONTENT_PAGE = 'EDIT_CONTENT_PAGE'
+export const DELETE_CONTENT_PAGE = 'DELETE_CONTENT_PAGE'
+export const ADD_CONTENT_PAGE = 'ADD_CONTENT_PAGE'
+export const BEFORE_CONTENT = 'BEFORE_CONTENT'
+
+//THEME
+export const BEFORE_THEME = 'BEFORE_THEME'
+export const ADD_THEME    = 'ADD_THEME'
+export const GET_THEME    = 'GET_THEME'
+export const GET_THEMES   = 'GET_THEMES'
+export const EDIT_THEME   = 'EDIT_THEME'
+export const DELETE_THEME = 'DELETE_THEME'
+export const GET_GAME_THEMES = 'GET_GAME_THEMES'
+export const GET_GAME_THEME = 'GET_GAME_THEME'
+export const EDIT_GAME_THEME = 'EDIT_GAME_THEME'
+export const DELETE_GAME_THEME = 'DELETE_GAME_THEME'
+
+//GAMES
+export const GET_GAMES =   'GET_GAMES'
+export const BEFORE_GAME = 'BEFORE_GAME'
+export const DELETE_GAME = 'DELETE_GAME'
+export const ADD_GAME = 'ADD_GAME'
+export const EDIT_GAME = 'EDIT_GAME'
+export const GET_GAME = 'GET_GAME'
+export const GET_USERS_IN_GAMES = 'GET_USERS_IN_GAMES'
+export const GET_SYNC_THEME_GAMES = 'GET_SYNC_THEME_GAMES'
+export const GET_GENRES_IN_GAMES = 'GET_GENRES_IN_GAMES'
+
+// GAMES
+export const BEFORE_GENRE = 'BEFORE_GENRE'
+export const GET_GENRES = 'GET_GENRES'
+export const EDIT_GENRE = 'EDIT_GENRE'
+export const DELETE_GENRE = 'DELETE_GENRE'
+export const GET_GENRE = 'GET_GENRE'
+export const CREATE_GENRE = 'CREATE_GENRE'
+
+
+//TOURNAMENT
+export const GET_TOURNAMENT    = 'GET_TOURNAMENT'
+export const BEFORE_TOURNAMENT = 'BEFORE_TOURNAMENT'
+export const DELETE_TOURNAMENT = 'DELETE_TOURNAMENT'
+export const UPSERT_TOURNAMENT = 'UPSERT_TOURNAMENT'
+export const GET_GAME_TOURNAMENTS = 'GET_GAME_TOURNAMENTS'
+export const EDIT_GAME_TOURNAMENT = 'EDIT_GAME_TOURNAMENT'
+export const DELETE_GAME_TOURNAMENT = 'DELETE_GAME_TOURNAMENT'
+
+//NEWS
+export const GET_NEWS = 'GET_NEWS'
+export const BEFORE_NEW = 'BEFORE_NEW'
+export const DELETE_NEW = 'DELETE_NEW'
+export const CREATE_NEW = 'CREATE_NEW'
+export const GET_NEW = 'GET_NEW'
+export const EDIT_NEW = 'EDIT_NEW'
+
+
+
+// LEARNING
+export const GET_LEARNINGS = 'GET_LEARNINGS'
+export const BEFORE_LEARNING = 'BEFORE_LEARNING'
+export const DELETE_LEARNING = 'DELETE_LEARNING'
+export const CREATE_LEARNING = 'CREATE_LEARNING'
+export const GET_LEARNING = 'GET_LEARNING'
+export const EDIT_LEARNING = 'EDIT_LEARNING'
+
+//REWARDS
+export const GET_REWARDS = 'GET_REWARDS'
+export const BEFORE_REWARD = 'BEFORE_REWARD'
+export const DELETE_REWARD = 'DELETE_REWARD'
+export const CREATE_REWARD = 'CREATE_REWARD'
+export const GET_REWARD = 'GET_REWARD'
+export const EDIT_REWARD = 'EDIT_REWARD'
+
+//PROMOS
+export const GET_PROMOS = 'GET_PROMOS'
+export const BEFORE_PROMO = 'BEFORE_PROMO'
+export const DELETE_PROMO = 'DELETE_PROMO'
+export const CREATE_PROMO = 'CREATE_PROMO'
+export const GET_PROMO = 'GET_PROMO'
+export const EDIT_PROMO = 'EDIT_PROMO'
+
+//PLAYERREPORTS
+export const GET_PLAYERREPORTS = 'GET_PLAYERREPORTS'
+export const BEFORE_PLAYERREPORTS = 'BEFORE_PLAYERREPORTS'
+export const EDIT_PLAYERREPORT = 'EDIT_PLAYERREPORT'
+export const DELETE_PLAYERREPORT = 'DELETE_PLAYERREPORT'
+
+
+ 
+
+//SUPPORT
+export const BEFORE_SUPPORT = 'BEFORE_SUPPORT'
+export const GET_SUPPORTS = 'GET_SUPPORTS'
+export const EDIT_SUPPORT = 'EDIT_SUPPORT'
+export const GET_SUPPORT_SDK = 'GET_SUPPORT_SDK'
+export const GET_SUPPORT_GAMES = 'GET_SUPPORT_GAMES'
+
+//SUPPORT_DEV
+// export const BEFORE_DEV = 'BEFORE_DEV'
+// export const GET_DEVS = 'GET_DEVS'
+// export const GET_DEV = 'GET_DEV'
+// export const EDIT_DEV = 'EDIT_DEV'
+// export const GET_DEV_SUPPORT_SDK = 'GET_DEV_SUPPORT_SDK'
+// export const GET_DEV_SUPPORT_GAMES = 'GET_DEV_SUPPORT_GAMES'
+
+//SUPPORT_PLAYER
+// export const BEFORE_PLAYER = 'BEFORE_PLAYER'
+// export const GET_PLAYERS = 'GET_PLAYERS'
+// export const GET_PLAYER = 'GET_PLAYER'
+// export const EDIT_PLAYER = 'EDIT_PLAYER'
+// export const GET_SUPPORT_PLAYER_GAMES = 'GET_SUPPORT_PLAYER_GAMES'
+
+//SDK
+export const BEFORE_SDK = 'BEFORE_SDK'
+export const GET_SDKS = 'GET_SDKS'
+export const GET_SDK = 'GET_SDK'
+export const CREATE_SDK = 'CREATE_SDK'
+export const EDIT_SDK = 'EDIT_SDK'
+export const UPSERT_SDK = 'UPSERT_SDK'
+export const DELETE_SDK = 'DELETE_SDK'
+
+//Season
+export const BEFORE_SEASON = 'BEFORE_SEASON'
+export const GET_SEASONS = 'GET_SEASONS'
+export const GET_SEASON = 'GET_SEASON'
+export const CREATE_SEASON = 'CREATE_SEASON'
+export const EDIT_SEASON = 'EDIT_SEASON'
+export const DELETE_SEASON = 'DELETE_SEASON'
+export const GET_SEASON_GAMES = 'GET_SEASON_GAMES'
+
+
+export const GET_ALL_REWARDS = 'GET_ALL_REWARDS'
+export const BEFORE_TOURNAMENT_REWARD = 'BEFORE_TOURNAMENT_REWARD'
+
+
+//matchStats
+export const BEFORE_MATCH_STATS = 'BEFORE_MATCH_STATS'
+export const GET_ALL_MATCH_STATS = 'GET_ALL_MATCH_STATS'
