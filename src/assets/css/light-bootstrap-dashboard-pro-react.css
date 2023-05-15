@@ -394,7 +394,7 @@ input:focus {
       font-weight: 400;
       line-height: 30px;
       white-space: nowrap;
-      color: #FFFFFF;
+      color: #000;
       overflow: hidden; }
     .sidebar .logo p {
       float: left;
@@ -435,7 +435,7 @@ input:focus {
       text-transform: uppercase;
       white-space: nowrap;
       position: relative;
-      color: #FFFFFF;
+      color: #000;
       -webkit-transform: translate3d(0px, 0, 0);
       -moz-transform: translate3d(0px, 0, 0);
       -o-transform: translate3d(0px, 0, 0);
@@ -527,7 +527,7 @@ input:focus {
     float: none;
     display: block; }
     .sidebar .nav .nav-item .nav-link {
-      color: #FFFFFF;
+      color: #000;
       margin: 5px 15px 0px 10px;
       opacity: .86;
       border-radius: 4px;
@@ -589,7 +589,7 @@ input:focus {
   padding: 5px 0px 5px 15px;
   display: block;
   font-size: 1.125rem;
-  color: #FFFFFF;
+  color: #000;
   font-weight: 400;
   line-height: 30px;
   white-space: nowrap;
@@ -2434,7 +2434,7 @@ input:focus {
 .table-bigboy > thead > tr > th {
   font-size: 0.875rem;
   text-transform: uppercase;
-  color: #9A9A9A;
+  color: #000;
   font-weight: 400; }
 
 .table-bigboy > tbody > tr > td {
@@ -4046,7 +4046,7 @@ input:focus {
   .card label {
     font-size: 0.875rem;
     font-weight: 400;
-    color: #9A9A9A;
+    color: #000;
     margin-bottom: 0px; }
     .card .card-category i,
     .card label i {

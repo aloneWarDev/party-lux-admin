@@ -411,12 +411,12 @@ const Sdk = (props) => {
                                     <Card.Body>
                                         <Row>
                                             <Col xl={3} sm={6}>
-                                                <label style={{ color: 'white' }}>Name</label>
+                                                <label style={{ color: 'black' }}>Name</label>
                                                 <Form.Control value={searchName} type="text" placeholder="Name" onChange={(e) => setSearchName(e.target.value)} />
                                             </Col>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Platform Type</label>
+                                                    <label style={{ color: 'black' }}>Platform Type</label>
                                                     <Form.Control as="select" className="form-select pr-3 mr-3" aria-label="Default select example"
                                                         value={searchPlatformType} onChange={(e) => setSearchPlatformType(e.target.value)}
                                                     >
@@ -429,7 +429,7 @@ const Sdk = (props) => {
 
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Development Environment</label>
+                                                    <label style={{ color: 'black' }}>Development Environment</label>
                                                     <Form.Control as="select" className="form-select pr-3 mr-3" aria-label="Default select example"
                                                         value={searchDevelopmentEnv} onChange={(e) => setSearchDevelopmentEnv(e.target.value)}
                                                     >
@@ -440,7 +440,7 @@ const Sdk = (props) => {
                                             </Col>
 
                                             <Col xl={3} sm={6}>
-                                                <label style={{ color: 'white' }}>Latest</label>
+                                                <label style={{ color: 'black' }}>Latest</label>
                                                 <Form.Group>
                                                     <select value={searchLatest} onChange={(e) => setSearchLatest(e.target.value)}>
                                                         <option value="">Select Latest</option>
@@ -470,7 +470,7 @@ const Sdk = (props) => {
                                 <Card className="table-big-boy">
                                     <Card.Header>
                                         <div className='d-flex justify-content-end mb-2 pr-3'>
-                                            <span style={{ color: 'white', fontWeight: 'bold' }}>{`Total : ${pagination?.total}`}</span>
+                                            <span style={{ color: 'black', fontWeight: 'bold' }}>{`Total : ${pagination?.total}`}</span>
                                         </div>
                                         <div className="d-block d-sm-flex align-items-center justify-content-between">
                                             <Card.Title as="h4" className='mb-2 mb-sm-0'>SDKs</Card.Title>
@@ -817,19 +817,19 @@ const Sdk = (props) => {
                                             <label> Select distribution platforms <span className="text-danger">*</span></label>
                                             <div className='icon d-sm-flex'>
                                                 <div className="mr-2">
-                                                    <Button className='icon apple d-flex align-items-center' onClick={() => { setPlatformType(2); if (platformType != 2) setDevelopmentEnv('') }} style={platformType === 2 ? { backgroundColor: "#fff" } : { backgroundColor: "#c92626", border: "#c92626" }}>
+                                                    <Button className='icon apple d-flex align-items-center' onClick={() => { setPlatformType(2); if (platformType != 2) setDevelopmentEnv('') }} style={platformType === 2 ? { backgroundColor: "#fff" } : { backgroundColor: "#A05ED4", border: "#A05ED4" }}>
                                                         <i className="fab fa-apple mr-2" aria-hidden="true"></i>
                                                         <span>IOS</span>
                                                     </Button>
                                                 </div>
                                                 <div className="mr-2">
-                                                    <Button className='icon android d-flex align-items-center' onClick={() => { setPlatformType(1); if (platformType != 1) setDevelopmentEnv('') }} style={platformType === 1 ? { backgroundColor: "#fff" } : { backgroundColor: "#c92626", border: "#c92626" }}>
+                                                    <Button className='icon android d-flex align-items-center' onClick={() => { setPlatformType(1); if (platformType != 1) setDevelopmentEnv('') }} style={platformType === 1 ? { backgroundColor: "#fff" } : { backgroundColor: "#A05ED4", border: "#A05ED4" }}>
                                                         <i className="fab fa-android mr-2" aria-hidden="true"></i>
                                                         <span>Android</span>
                                                     </Button>
                                                 </div>
                                                 <div>
-                                                    <Button className='icon android d-flex align-items-center' onClick={() => { setPlatformType(3); if (platformType != 3) setDevelopmentEnv('') }} style={platformType === 3 ? { backgroundColor: "#fff" } : { backgroundColor: "#c92626", border: "#c92626" }}>
+                                                    <Button className='icon android d-flex align-items-center' onClick={() => { setPlatformType(3); if (platformType != 3) setDevelopmentEnv('') }} style={platformType === 3 ? { backgroundColor: "#fff" } : { backgroundColor: "#A05ED4", border: "#A05ED4" }}>
                                                         <i className="fab fa-android mr-2" ></i>
                                                         <i className="fab fa-apple mr-2" aria-hidden="true"></i>
                                                         <span>Cross-Platform</span>
@@ -848,7 +848,7 @@ const Sdk = (props) => {
                                                     platformType === 3 &&
                                                     <>
                                                         <div className='icon mr-2'>
-                                                            <Button className='icon apple' onClick={() => { setDevelopmentEnv(1) }} style={(platformType === 3 && developmentEnv === 1) ? { backgroundColor: "#fff" } : { backgroundColor: "#c92626", border: "#c92626" }}>
+                                                            <Button className='icon apple' onClick={() => { setDevelopmentEnv(1) }} style={(platformType === 3 && developmentEnv === 1) ? { backgroundColor: "#fff" } : { backgroundColor: "#A05ED4", border: "#A05ED4" }}>
                                                                 <i className="fab fa-unity" aria-hidden="true"></i>
                                                                 <span>Unity</span>
                                                             </Button>
@@ -860,13 +860,13 @@ const Sdk = (props) => {
                                                     platformType === 2 &&
                                                     <>
                                                         <div className='icon mr-2'>
-                                                            <Button className='icon apple' onClick={() => { setDevelopmentEnv(5) }} style={(platformType === 2 && developmentEnv === 5) ? { backgroundColor: "#fff" } : { backgroundColor: "#c92626", border: "#c92626" }}>
+                                                            <Button className='icon apple' onClick={() => { setDevelopmentEnv(5) }} style={(platformType === 2 && developmentEnv === 5) ? { backgroundColor: "#fff" } : { backgroundColor: "#A05ED4", border: "#A05ED4" }}>
                                                                 <i className="fab fa-unity" aria-hidden="true"></i>
                                                                 <span>Unity</span>
                                                             </Button>
                                                         </div>
                                                         <div className='icon'>
-                                                            <Button className='icon apple' onClick={() => { setDevelopmentEnv(3) }} style={(platformType === 2 && developmentEnv === 3) ? { backgroundColor: "#fff" } : { backgroundColor: "#c92626", border: "#c92626" }}>
+                                                            <Button className='icon apple' onClick={() => { setDevelopmentEnv(3) }} style={(platformType === 2 && developmentEnv === 3) ? { backgroundColor: "#fff" } : { backgroundColor: "#A05ED4", border: "#A05ED4" }}>
                                                                 <i className="fab fa-unity" aria-hidden="true"></i>
                                                                 <span>Xcode</span>
                                                             </Button>
@@ -878,13 +878,13 @@ const Sdk = (props) => {
                                                     platformType === 1 &&
                                                     <>
                                                         <div className='icon mr-2'>
-                                                            <Button className='icon apple' onClick={() => { setDevelopmentEnv(4) }} style={(platformType === 1 && developmentEnv === 4) ? { backgroundColor: "#fff" } : { backgroundColor: "#c92626", border: "#c92626" }} >
+                                                            <Button className='icon apple' onClick={() => { setDevelopmentEnv(4) }} style={(platformType === 1 && developmentEnv === 4) ? { backgroundColor: "#fff" } : { backgroundColor: "#A05ED4", border: "#A05ED4" }} >
                                                                 <i className="fab fa-unity" aria-hidden="true"></i>
                                                                 <span>Unity</span>
                                                             </Button>
                                                         </div>
                                                         <div className='icon'>
-                                                            <Button className='icon apple' onClick={() => { setDevelopmentEnv(2) }} style={(platformType === 1 && developmentEnv === 2) ? { backgroundColor: "#fff" } : { backgroundColor: "#c92626", border: "#c92626" }} >
+                                                            <Button className='icon apple' onClick={() => { setDevelopmentEnv(2) }} style={(platformType === 1 && developmentEnv === 2) ? { backgroundColor: "#fff" } : { backgroundColor: "#A05ED4", border: "#A05ED4" }} >
                                                                 <i className="fab fa-unity" aria-hidden="true"></i>
                                                                 <span>Android Studio</span>
                                                             </Button>

@@ -124,18 +124,18 @@ const MatchStats = (props) => {
                                             <Row className='align-items-baseline'>
                                                 <Col xl={3} sm={6}>
                                                     <Form.Group>
-                                                        <label style={{ color: 'white' }}>Game Name</label>
+                                                        <label style={{ color: 'black' }}>Game Name</label>
                                                         <Form.Control type="text" value={searchGameName} placeholder="Game Name" onChange={(e) => setSearchGameName(e.target.value)} />
                                                     </Form.Group>
                                                 </Col>
                                                 <Col xl={3} sm={6}>
                                                     <Form.Group>
-                                                        <label style={{ color: 'white' }}>Tournament Name</label>
+                                                        <label style={{ color: 'black' }}>Tournament Name</label>
                                                         <Form.Control type="text" value={searchTournamentName} placeholder="Tournament Name" onChange={(e) => setSearchTournamentName(e.target.value)} />
                                                     </Form.Group>
                                                 </Col>
                                                 {/* <Col xl={3} sm={6}>
-                                                    <label style={{ color: 'white' }}>Status</label>
+                                                    <label style={{ color: 'black' }}>Status</label>
                                                     <Form.Group>
                                                         <select value={searchStatus} onChange={(e) => setSearchStatus(e.target.value)}>
                                                             <option value="">Select Status</option>
@@ -164,7 +164,7 @@ const MatchStats = (props) => {
                                     <Card className="table-big-boy">
                                         <Card.Header>
                                             <div className='d-flex justify-content-end mb-2 pr-3'>
-                                                <span style={{ color: 'white', fontWeight: 'bold' }}>{`Total : ${pagination?.total}`}</span>
+                                                <span style={{ color: 'black', fontWeight: 'bold' }}>{`Total : ${pagination?.total}`}</span>
                                             </div>
                                             <div className="d-block d-md-flex align-items-center justify-content-between">
                                                 <Card.Title as="h4">Match Stats</Card.Title>

@@ -20,11 +20,12 @@ function Dashboard(props) {
 	// const [currentMonth,setCurrentMonth]=useState('')
 	const [loader, setLoader] = useState(true)
 
-	useEffect(() => {
-		props.getDashboard()
-	}, [])
+	// useEffect(() => {
+	// 	props.getDashboard()
+	// }, [])
 
 	useEffect(() => {
+		setLoader(false)
 		if (props.dashboard.dataAuth) {
 			const { devUser, playerUser ,stats } = props.dashboard.data
 			setData({ devUser, playerUser ,stats})
@@ -56,7 +57,7 @@ function Dashboard(props) {
 										<Card.Body>
 											<div className="d-flex justify-content-between">
 												<div className="numbers">
-													<p className="card-category">Developer Users</p>
+													<p className="card-category">Simple Users</p>
 													<Card.Title as="h4">{data?.devUser}</Card.Title>
 												</div>
 												<div className="icon-big text-center icon-warning">
@@ -73,7 +74,7 @@ function Dashboard(props) {
 										<Card.Body>
 											<div className="d-flex justify-content-between">
 												<div className="numbers">
-													<p className="card-category">Player Users</p>
+													<p className="card-category">Business Users</p>
 													<Card.Title as="h4">{data?.playerUser}</Card.Title>
 												</div>
 												<div className="icon-big text-center icon-warning">

@@ -145,7 +145,7 @@
                         &.active{
                             .nav-link{
                                 // background: rgba(255, 255, 255, 0.13);
-                                background: #ff0000;
+                                background: #A05ED4;
                             }
                         }
                     }
@@ -164,7 +164,7 @@
                 font-weight: 400;
                 white-space: nowrap;
                 position: relative;
-                color: $white-color;
+                color: $black-color;
                 @include transform-translate-x(0px);
                 display: block;
                 height: auto;
@@ -317,7 +317,7 @@
                 align-items: center;
                 &:hover{
                     // background: rgba(255, 255, 255, 0.13);
-                    background: #ff0000;
+                    background: #A05ED4;
                     opacity: 1;
                 }
 
@@ -330,7 +330,7 @@
 
             &:not(.collapse .nav-link):hover .nav-link{
                 // background: rgba(255,255,255,0.13);
-                background: #ff0000;
+                background: #A05ED4;
                 opacity: 1;
             }
 
@@ -339,11 +339,11 @@
                     color: $white-color;
                     opacity: 1;
                     // background:$grey-bg;
-                    background:#ff0000;
+                    background:#A05ED4;
                     box-shadow:0 0 27px rgba(0,0,0,0.05);
                     border-radius:8px;
                     p{
-                        color: $white-color;
+                        color: $black-color;
                     }
                     .nav-icon-holder{
                         background:$white-color;
@@ -359,7 +359,7 @@
                     color: $white-color;
                     opacity: 1;
                     // background:$grey-bg;
-                    background:#ff0000;
+                    background:#A05ED4;
                     box-shadow:0 0 27px rgba(0,0,0,0.05);
                     border-radius:8px;
                     p{
@@ -430,7 +430,7 @@
             padding: 5px 0px 5px 15px;
             display: block;
             font-size: $font-size-large;
-            color: $white-color;
+            color: $black-color;
             font-weight: $font-weight-normal;
             line-height: 30px;
             white-space: nowrap;
@@ -471,7 +471,7 @@
             padding: 7px 0px;
             display: block;
             font-size: $font-size-large;
-            color: $white-color;
+            color: $black-color;
             font-weight: $font-weight-normal;
             line-height: 30px;
             text-align: center;

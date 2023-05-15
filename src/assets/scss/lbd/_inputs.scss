@@ -1,22 +1,22 @@
 .form-control::-moz-placeholder{
-   @include placeholder($medium-gray,1);
+   @include placeholder($black-color,1);
 }
 .form-control:-moz-placeholder{
-   @include placeholder($medium-gray,1);
+   @include placeholder($black-color,1);
 }
 .form-control::-webkit-input-placeholder{
-   @include placeholder($medium-gray,1);
+   @include placeholder($black-color,1);
 }
 .form-control:-ms-input-placeholder{
-   @include placeholder($medium-gray,1);
+   @include placeholder($black-color,1);
 }
 
 .form-control {
     background-color: transparent;
-    border: 1px solid $light-gray;
+    border: 1px solid $black-color;
     border-radius: $border-radius-base;
     font-size: .875rem;
-    color: $white-color;
+    color: $black-color;
     @include input-size($padding-base-vertical, $padding-base-horizontal - 4, $height-base);
     @include box-shadow(none);
 
@@ -25,7 +25,7 @@
            border: 1px solid $medium-dark-gray;
            @include box-shadow(none);
            outline: 0 !important;
-           color: $white-bg;
+           color: $black-color;
     }
 
     .has-success &,

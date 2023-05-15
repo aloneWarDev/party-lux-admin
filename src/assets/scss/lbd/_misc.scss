@@ -344,8 +344,8 @@ input:focus {background-color:transparent;}
 			background-image:none !important;
 		}
 		&.swal2-confirm{
-			background: #c92626 !important;
-			border: 1px solid #c92626 !important;
+			background: #A05ED4 !important;
+			border: 1px solid #A05ED4 !important;
 			&:focus{
 				background:$color-red !important;
 				border-color:$color-red !important;
@@ -574,10 +574,10 @@ input:focus {background-color:transparent;}
 	.dropdown-item{
 		&.active,
 		&:active{
-			background-color:#c92626;
+			background-color:#A05ED4;
 		}
 	}
 }
 .text-theme{
-	color:#c92626;
+	color:#A05ED4;
 }

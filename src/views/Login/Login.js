@@ -14,8 +14,8 @@ var CryptoJS = require("crypto-js");
 // react-bootstrap components
 import { Badge, Button, Card, Form, Navbar, Nav, Container, Col } from "react-bootstrap";
 
-function Login(props) {
-    const [user, setUser] = useState({ email: '', password: '' })
+const Login=(props) =>{
+    const [user, setUser] = useState({ email: '', password: '' , role:'admin'})
     const [loader, setLoader] = useState(false)
     const [showPass, setShowPass] = useState(false)
     const [permissions, setPermissions] = useState({})
@@ -27,12 +27,14 @@ function Login(props) {
     // when response from login is received
     useEffect(() => {
         if (props.admin.loginAdminAuth) {
-            let roleId = props.admin.admin?.data?.roleId
+            console.log("props.admin.admin: ",props.admin.admin?.data?.role)
+            let roleId = props.admin.admin?.data?.role
             var encryptedRole = CryptoJS.AES.encrypt(roleId, 'secret key 123').toString();
             localStorage.setItem('role', encryptedRole);
-            localStorage.setItem('userID', props.admin.admin?.data?._id);
-            localStorage.setItem('userName', props.admin.admin?.data?.name);
-            localStorage.setItem('userImage', props.admin.admin?.data?.image);
+            console.log("_id: ", props.admin.admin?.data)
+            localStorage.setItem('userID', props.admin.admin?.data?.userId);
+            // localStorage.setItem('userName', props.admin.admin?.data?.name);
+            // localStorage.setItem('userImage', props.admin.admin?.data?.image);
             props.history.push('/dashboard')
 
         }
@@ -50,10 +52,10 @@ function Login(props) {
         }
     }, [props.getRolesRes])
 
-    useEffect(() => {
-        if (localStorage.getItem('admin-accessToken'))
-            props.getRoles()
-    }, [])
+    // useEffect(() => {
+    //     if (localStorage.getItem('admin-accessToken'))
+    //         // props.getRoles()
+    // }, [])
 
     const onChange = (e) => {
         let { name, value } = e.target
@@ -148,7 +150,9 @@ function Login(props) {
                                 </Col>
                             </Container>
                         </div>
-                        <div className="full-page-background" style={{ backgroundImage: "url(" + require("assets/img/full-screen-image-2.jpg").default + ")", }}></div>
+                        {/* <div className="full-page-background" 
+                        // style={{ backgroundImage: "url(" + require("assets/img/full-screen-image-2.jpg").default + ")", }}
+                        ></div> */}
                     </div>
 
             }

@@ -186,7 +186,7 @@ const Promos = (props) =>{
                                         <Row>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Promo Code</label>
+                                                    <label style={{ color: 'black' }}>Promo Code</label>
                                                     <Form.Control value={searchPromoCode} type="text" placeholder="Promo Code" onChange={(e) => setSearchPromoCode(e.target.value)}/* onChange={} onKeyDown={} */ />
                                                 </Form.Group>
                                             </Col>
@@ -198,7 +198,7 @@ const Promos = (props) =>{
                                             </Col>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Discount Type</label>
+                                                    <label style={{ color: 'black' }}>Discount Type</label>
                                                     <Form.Control value={searchDiscountType} type="text" placeholder="Discount Type" onChange={(e) => setSearchDiscountType(e.target.value)}/* onChange={} onKeyDown={} */ />
                                                 </Form.Group>
                                             </Col>
@@ -228,7 +228,7 @@ const Promos = (props) =>{
                                 <Card className="table-big-boy">
                                     <Card.Header>
                                     <div className='d-flex justify-content-end mb-2 pr-3'>
-                                    <span  style={{ color: 'white',fontWeight:'bold' }}>{`Total : ${pagination?.total}`}</span>
+                                    <span  style={{ color: 'black',fontWeight:'bold' }}>{`Total : ${pagination?.total}`}</span>
                                     </div>
                                         <div className="d-block d-md-flex align-items-center justify-content-between">
                                             <Card.Title as="h4">Promos</Card.Title>

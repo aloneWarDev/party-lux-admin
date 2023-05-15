@@ -28,7 +28,7 @@ export const options = {
       position: 'top',
       labels: {
         boxWidth: 50,
-        color: 'white',
+        color: 'black',
         font : {weight : 'bold'}
       }
     },
@@ -41,7 +41,7 @@ export const options = {
   scales: {
       yAxes:{
           ticks:{
-              color: 'white',
+              color: 'black',
               fontSize: 12,
               font: {
                 weight: 'bold'
@@ -50,7 +50,7 @@ export const options = {
       },
       xAxes: {
           ticks:{
-              color: 'white',
+              color: 'black',
               fontSize: 12,
               font: {
                 weight: 'bold'

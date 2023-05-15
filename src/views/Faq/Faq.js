@@ -216,7 +216,7 @@ const Faq = (props) => {
                                 <Card className="table-big-boy">
                                     <Card.Header>
                                     <div className='d-flex justify-content-end mb-2 pr-3'>
-                                    <span  style={{ color: 'white',fontWeight:'bold' }}>{`Total : ${pagination?.total}`}</span>
+                                    <span  style={{ color: 'black',fontWeight:'bold' }}>{`Total : ${pagination?.total}`}</span>
                                     </div>
                                         <div className="d-block d-sm-flex align-items-center justify-content-between">
                                             <Card.Title as="h4"className='mb-2 mb-sm-0'>FAQs</Card.Title>

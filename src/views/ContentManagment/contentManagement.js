@@ -183,19 +183,19 @@ const Faq = (props) => {
                                         <Row className='align-items-baseline'>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Title</label>
+                                                    <label style={{ color: 'black' }}>Title</label>
                                                     <Form.Control type="text" value={searchTitle} placeholder="Title" onChange={(e) => setSearchTitle(e.target.value)} /*onKeyDown={} */ />
                                                 </Form.Group>
                                             </Col>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Slug</label>
+                                                    <label style={{ color: 'black' }}>Slug</label>
                                                     <Form.Control type="text" value={searchSlug} placeholder="Slug" onChange={(e) => setSearchSlug(e.target.value)} /*onKeyDown={} */ />
                                                 </Form.Group>
                                             </Col>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Status</label>
+                                                    <label style={{ color: 'black' }}>Status</label>
                                                     <select value={searchStatus} onChange={(e) => setSearchStatus(e.target.value)}>
                                                         <option value="">Select Status</option>
                                                         <option value='true'>Active</option>
@@ -231,7 +231,7 @@ const Faq = (props) => {
                                 <Card className="table-big-boy">
                                     <Card.Header>
                                         <div className='d-flex justify-content-end mb-2 pr-3'>
-                                            <span style={{ color: 'white', fontWeight: 'bold' }}>{`Total : ${pagination?.total}`}</span>
+                                            <span style={{ color: 'black', fontWeight: 'bold' }}>{`Total : ${pagination?.total}`}</span>
                                         </div>
                                         <div className="d-block d-sm-flex align-items-center justify-content-between">
                                             <Card.Title as="h4"className='mb-2 mb-sm-0'>Content Management</Card.Title>

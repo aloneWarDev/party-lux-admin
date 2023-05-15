@@ -192,7 +192,7 @@ const Rewards = (props) =>{
                                         <Row>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Reward ID</label>
+                                                    <label style={{ color: 'black' }}>Reward ID</label>
                                                     <Form.Control value={searchRewardId} type="text" placeholder="Reward ID" onChange={(e) => setSearchRewardId(e.target.value)}/* onChange={} onKeyDown={} */ />
                                                 </Form.Group>
                                             </Col>
@@ -204,7 +204,7 @@ const Rewards = (props) =>{
                                             </Col>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>price</label>
+                                                    <label style={{ color: 'black' }}>price</label>
                                                     <Form.Control value={searchPrice} type="text" placeholder="e.g , 0.01" onChange={(e) => setSearchPrice(e.target.value)}/* onChange={} onKeyDown={} */ />
                                                 </Form.Group>
                                             </Col>
@@ -234,7 +234,7 @@ const Rewards = (props) =>{
                                 <Card className="table-big-boy">
                                     <Card.Header>
                                     <div className='d-flex justify-content-end mb-2 pr-3'>
-                                    <span  style={{ color: 'white',fontWeight:'bold' }}>{`Total : ${pagination?.total}`}</span>
+                                    <span  style={{ color: 'black',fontWeight:'bold' }}>{`Total : ${pagination?.total}`}</span>
                                     </div>
                                         <div className="d-block d-md-flex align-items-center justify-content-between">
                                             <Card.Title as="h4">Rewards</Card.Title>

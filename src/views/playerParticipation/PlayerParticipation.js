@@ -333,20 +333,20 @@ const PlayerParticipation = (props) => {
                                                 <>
                                                     <Col xl={3} sm={6}>
                                                         <Form.Group>
-                                                            <label style={{ color: 'white' }}>Username</label>
+                                                            <label style={{ color: 'black' }}>Username</label>
                                                             <Form.Control value={searchParticipateUsername} type="text" placeholder="John"   onChange={(e) => setSearchParticipateUsername(e.target.value)}  />
                                                         </Form.Group>
                                                     </Col>
                                                     <Col xl={3} sm={6}>
-                                                        <label style={{ color: 'white' }}>Game Tournament Name</label>
+                                                        <label style={{ color: 'black' }}>Game Tournament Name</label>
                                                         <Form.Control value={searchParticipateTournamentName} type="text" placeholder="Game Tournament Name" onChange={(e) => setSearchParticipateTournamentName(e.target.value)} />
                                                     </Col>
                                                     <Col xl={3} sm={6}>
-                                                        <label style={{ color: 'white' }}>Rank</label>
+                                                        <label style={{ color: 'black' }}>Rank</label>
                                                         <Form.Control value={searchParticipateRank} type="text" placeholder="Rank" onChange={(e) => setSearchParticipateRank(e.target.value)} />
                                                     </Col>
                                                     <Col xl={3} sm={6}>
-                                                        <label style={{ color: 'white' }}>Date</label>
+                                                        <label style={{ color: 'black' }}>Date</label>
                                                         <Form.Group>
                                                             <DatePicker onChange={(e) => { setSearchParticipateDate(e) }} value={searchParticipateDate ? new Date(searchParticipateDate) : null}  maxDate={new Date()} minDate={new Date("1800-01-01")} />
                                                         </Form.Group>
@@ -369,20 +369,20 @@ const PlayerParticipation = (props) => {
                                                 <>
                                                     <Col xl={3} sm={6}>
                                                         <Form.Group>
-                                                            <label style={{ color: 'white' }}>Game Name</label>
+                                                            <label style={{ color: 'black' }}>Game Name</label>
                                                             <Form.Control value={searchPlayerGame} type="text" placeholder="John"  onChange={(e) => setSearchPlayerGame(e.target.value)}  />
                                                         </Form.Group>
                                                     </Col>
                                                     <Col xl={3} sm={6}>
-                                                        <label style={{ color: 'white' }}>Tournament Name</label>
+                                                        <label style={{ color: 'black' }}>Tournament Name</label>
                                                         <Form.Control value={searchPlayerTournament} type="text" placeholder="Tournament Name" onChange={(e) => setSearchPlayerTournament(e.target.value)}  />
                                                     </Col>
                                                     <Col xl={3} sm={6}>
-                                                        <label style={{ color: 'white' }}>Amount</label>
+                                                        <label style={{ color: 'black' }}>Amount</label>
                                                         <Form.Control value={searchPlayerAmount} type="text" placeholder="0.01" onChange={(e) => setSearchPlayerAmount(e.target.value)} />
                                                     </Col>
                                                     <Col xl={3} sm={6}>
-                                                        <label style={{ color: 'white' }}>Date</label>
+                                                        <label style={{ color: 'black' }}>Date</label>
                                                         <Form.Group>
                                                             <DatePicker onChange={(e) => { setSearchPlayerDate(e) }} value={ searchPlayerDate ? new Date(searchPlayerDate) : null} maxDate={new Date()} minDate={new Date("1800-01-01")} />
                                                         </Form.Group>
@@ -405,12 +405,12 @@ const PlayerParticipation = (props) => {
                                                 <>
                                                     <Col xl={3} sm={6}>
                                                         <Form.Group>
-                                                            <label style={{ color: 'white' }}>Username</label>
+                                                            <label style={{ color: 'black' }}>Username</label>
                                                             <Form.Control value={searchRefundUsername} type="text" placeholder="John"  onChange={(e) => setSearchRefundUsername(e.target.value)}  />
                                                         </Form.Group>
                                                     </Col>
                                                     <Col xl={3} sm={6}>
-                                                        <label style={{ color: 'white' }}>Amount</label>
+                                                        <label style={{ color: 'black' }}>Amount</label>
                                                         <Form.Control value={searchRefundAmount} type="text" placeholder="0.01" onChange={(e) => setSearchRefundAmount(e.target.value)}  />
                                                     </Col>
                                                     <Col xl={3} sm={6}>
@@ -435,7 +435,7 @@ const PlayerParticipation = (props) => {
                                 <Card className="table-big-boy">
                                     <Card.Header>
                                         <div className='d-flex justify-content-end mb-2 pr-3'>
-                                            <span style={{ color: 'white', fontWeight: 'bold' }}>{`Total : ${pagination?.total}`}</span>
+                                            <span style={{ color: 'black', fontWeight: 'bold' }}>{`Total : ${pagination?.total}`}</span>
                                         </div>
                                         <div className="d-block d-md-flex align-items-center justify-content-between">
                                             <Card.Title as="h4">{location.pathname.split('/')[1] === 'player-participation-payment' ? 'Participation Payment' : location.pathname.split('/')[1] === 'tournament-participation' && 'Tournament Participation'}</Card.Title>

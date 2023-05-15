@@ -16,7 +16,7 @@ function AuthFooter() {
     <>
       <footer className="footer position-absolute fixed-bottom">
         <Container>
-          <nav>
+          color: 'black', fontWeight: 'bold'>
             {/* <ul className="footer-menu d-flex justify-content-center">
               <li>
                 <a className="m-0" href="#" onClick={(e) => e.preventDefault()}>

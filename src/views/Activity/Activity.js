@@ -253,13 +253,13 @@ const Activity = (props) => {
                                         <Row>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Username</label>
+                                                    <label style={{ color: 'black' }}>Username</label>
                                                     <Form.Control value={searchUsername  ? searchUsername : ''} type="text" placeholder="Username" onChange={(e) => setSearchUsername(e.target.value)}/* onChange={} onKeyDown={} */ />
                                                 </Form.Group>
                                             </Col>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Activity Type</label>
+                                                    <label style={{ color: 'black' }}>Activity Type</label>
                                                     <Form.Control as="select" className="form-select pr-3 mr-3" aria-label="Default select example"
                                                         value={searchActivityType ? searchActivityType : ''} onChange={(e) => setSearchActivityType(e.target.value)}
                                                     >
@@ -271,14 +271,14 @@ const Activity = (props) => {
 
 
                                             <Col xl={3} sm={6}>
-                                                <label style={{ color: 'white' }}>Created At From</label>
+                                                <label style={{ color: 'black' }}>Created At From</label>
                                                 <Form.Group>
                                                     <DatePicker onChange={(e) => { handleDate(e, setSearchCreatedAtFrom, 1) }} closeCalendar={isOpenCalenderFrom} value={searchAtFrom ? searchAtFrom : null} maxDate={searchAtTo ? new Date(searchAtTo) : new Date()} minDate={minOfSearchAtTo ? new Date(minOfSearchAtTo) : new Date("1800-01-01")} />
                                                     {/* <Form.Control value = {searchAtFrom ? searchAtFrom : ''} type="date" placeholder="mm/dd/yyyy"  onChange={(e) =>{ setSearchCreatedAtFrom(e.target.value) }}/> */}
                                                 </Form.Group>
                                             </Col>
                                             <Col xl={3} sm={6}>
-                                                <label style={{ color: 'white' }}>Created At To</label>
+                                                <label style={{ color: 'black' }}>Created At To</label>
                                                 <Form.Group>
                                                     <DatePicker onChange={(e) => { handleDate(e, setSearchCreatedAtTo, 2) }} closeCalendar={isOpenCalenderAtTo} value={searchAtTo ? searchAtTo : null} maxDate={new Date()} minDate={searchAtFrom ? new Date(searchAtFrom) : new Date("1800-01-01")} />
                                                     {/* <Form.Control value = {searchAtTo  ? searchAtTo : ''} type="date" placeholder="mm/dd/yyyy"  onChange={(e) =>{ setSearchCreatedAtTo(e.target.value)}}/> */}
@@ -329,9 +329,9 @@ const Activity = (props) => {
                                                             <>
                                                                 <div  style={style} key={index} className="row m-b-25">
                                                                     <div className="col">
-                                                                        {/* <h6 className="m-b-5" style={{ color: 'white' }}>{item?.admin?.name}</h6> */}
-                                                                        <p className="active-paragraph m-b-0" style={{ color: 'white' }}>{ item.activityOnModule ? item.activityOnModule.toUpperCase() : ''} is {activityTypeArray[`${item.type}`]} by {item?.admin?.name}</p>
-                                                                        <p className="active-paragraph m-b-0" style={{ color: 'white' }}>{ item?.createdAt ? moment(item?.createdAt).fromNow() : '' }</p>
+                                                                        {/* <h6 className="m-b-5" style={{ color: 'black' }}>{item?.admin?.name}</h6> */}
+                                                                        <p className="active-paragraph m-b-0" style={{ color: 'black' }}>{ item.activityOnModule ? item.activityOnModule.toUpperCase() : ''} is {activityTypeArray[`${item.type}`]} by {item?.admin?.name}</p>
+                                                                        <p className="active-paragraph m-b-0" style={{ color: 'black' }}>{ item?.createdAt ? moment(item?.createdAt).fromNow() : '' }</p>
                                                                     </div>
                                                                 </div>    
                                                             </>
