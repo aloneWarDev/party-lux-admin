@@ -53,7 +53,7 @@
         background-color: transparent;
         // border: 1px solid;
         border-radius: 12px;
-        // border-bottom: none !important;
+        border-bottom:1px solid #A05ED4 !important;
         .btn-info{
             background:$color-dark-purple;
             border-color:$color-dark-purple;
@@ -103,7 +103,7 @@
 
     .card-title{
         margin: $none;
-        color: $color-yellow;
+        color: #A05ED4;
         font-size:20px;
         line-height:24px;
         font-weight: 600;
@@ -207,7 +207,7 @@
     &.table-big-boy{
         border: none;
         border-radius: 10px;
-        border: 1px solid #dee2e6;
+        border: 1px solid #A05ED4;
         overflow: hidden;
         box-shadow: 0 20px 27px rgba(0,0,0,0.05);
     }
@@ -215,7 +215,7 @@
         margin:0 0 30px;
         // background:$grey-bg;
         background-color: transparent;
-        border: 1px solid #fff;;
+        border: 1px solid #a05ed4;
         box-shadow: 0 20px 27px rgba(0,0,0,0.05);
         border-radius:16px;
         // border:none;

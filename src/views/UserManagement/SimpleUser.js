@@ -18,7 +18,7 @@ import { getRole } from 'views/AdminStaff/permissions/permissions.actions';
 var CryptoJS = require("crypto-js");
 
 
-const DevUser = (props) => {
+const SimpleUser = (props) => {
     const dispatch = useDispatch()
     const [permissions, setPermissions] = useState({})
     const [Page, setPage] = useState(1)
@@ -80,7 +80,7 @@ const DevUser = (props) => {
 
     useEffect(() => {
         // const qs = ENV.objectToQueryString({ page: 1, limit: 10 })
-        const filter = { type: '1' }
+        const filter = { role: "user" , all: false}
         reset()
         if (searchUsername !== undefined && searchUsername !== null && searchUsername !== '')
             filter.username = searchUsername
@@ -130,7 +130,7 @@ const DevUser = (props) => {
             // 
             setUsers([...filtered, props.user.user])
             setLoader(false)
-            const filter = { type: '1' }
+            const filter = { role: "user" }
             if (searchUsername) {
                 filter.username = searchUsername
                 localStorage.setItem('devUsers_name', searchUsername)
@@ -151,8 +151,8 @@ const DevUser = (props) => {
                 filter.createdAtTo = searchAtTo
                 localStorage.setItem('devUserCreatedAtTo', searchAtTo)
             }
-            const qs = ENV.objectToQueryString({ page: Page, limit: 10 })
-            props.getUsers(qs, filter, "DeveloperUser", false, false)
+            // const qs = ENV.objectToQueryString({ page: Page, limit: 10 })
+            // props.getUsers(qs, filter, "DeveloperUser", false, false)
             props.beforeUser()
         }
     }, [props.user.upsertUserAuth])
@@ -164,7 +164,7 @@ const DevUser = (props) => {
             //         return item
             // })
             // setUsers(filtered)
-            const filter = { type: '1' }
+            const filter = { role: "user" }
             if (searchUsername) {
                 filter.username = searchUsername
                 localStorage.setItem('devUsers_name', searchUsername)
@@ -414,7 +414,7 @@ const DevUser = (props) => {
         reader.readAsDataURL(files[0]);
     };
     const onPageChange = async (page) => {
-        const filter = { type: '1' }
+        const filter = { role: "user"}
         if (searchUsername) {
             filter.username = searchUsername
             localStorage.setItem('devUsers_name', searchUsername)
@@ -461,7 +461,7 @@ const DevUser = (props) => {
     }
 
     const applyFilters = () => {
-        const filter = { type: '1' }
+        const filter = { role: "user" }
         if (searchUsername) {
             filter.username = searchUsername
             localStorage.setItem('devUsers_name', searchUsername)
@@ -503,7 +503,7 @@ const DevUser = (props) => {
         setMaxOfSearchAtTo("")
         setPage(1)
         const qs = ENV.objectToQueryString({ page: 1, limit: 10 })
-        props.getUsers(qs, { type: '1' })
+        props.getUsers(qs, { role: "user" })
         setLoader(true)
         localStorage.removeItem('devUsers_name')
         localStorage.removeItem('devUsers_email')
@@ -551,7 +551,15 @@ const DevUser = (props) => {
             setIsOpenCalenderFrom(false)
         }
 
+        
 
+
+    }
+
+    const arrayofObjectToString = (item) =>{
+        return item.map(event => {
+            return event.name
+        }).join(' , ')
     }
 
 
@@ -633,9 +641,9 @@ const DevUser = (props) => {
                                             <span style={{ color: 'black', fontWeight: 'bold' }}>{`Total : ${pagination?.total}`}</span>
                                         </div>
                                         <div className="d-block d-sm-flex align-items-center justify-content-between">
-                                            <Card.Title as="h4"className='mb-2 mb-sm-0'> Developer Users</Card.Title>
+                                            <Card.Title as="h4"className='mb-2 mb-sm-0'> Simple Users</Card.Title>
                                             {
-                                                permissions && permissions.addDeveloperUser &&
+                                                // permissions && permissions.addDeveloperUser &&
                                                 <Button
                                                     variant="info"
                                                     className="float-sm-right mb-0"
@@ -655,9 +663,7 @@ const DevUser = (props) => {
                                                         <th className="td-image text-center">Image</th>
                                                         <th className="td-name text-center">Username</th>
                                                         <th className="td-email text-center">Email</th>
-                                                        <th className="td-sdk text-center">Job Title</th>
-                                                        <th className="td-os text-center">Company Name</th>
-                                                        <th className="td-modal text-center">Website</th>
+                                                        <th className="td-sdk text-center">Joined Event Name</th>
                                                         <th className="td-created text-center">Created On</th>
                                                         <th className="td-actions text-center">Actions</th>
                                                     </tr>
@@ -672,7 +678,7 @@ const DevUser = (props) => {
                                                                         <td className='table-img-center'>
                                                                             <div className="user-image">
                                                                                 {/* {} */}
-                                                                                <img className="img-fluid" alt="User Image" src={user.profileImage ? user.profileImage : userDefaultImg} onError={(e) => { e.target.onerror = null; e.target.src = userDefaultImg }} />
+                                                                                <img className="img-fluid" alt="User Image" src={user?.profile?.profileImage ? user?.profile?.profileImage : userDefaultImg} onError={(e) => { e.target.onerror = null; e.target.src = userDefaultImg }} />
                                                                             </div>
                                                                         </td>
                                                                         <td className="td-name text-center">
@@ -688,20 +694,14 @@ const DevUser = (props) => {
                                                                             {user.email ? user.email : 'N/A'}
                                                                         </td>
                                                                         <td className='text-center'>
-                                                                            {user.designation ? user.designation : 'N/A'}
-                                                                        </td>
-                                                                        <td className='text-center'>
-                                                                            {user.companyName ? user.companyName : 'N/A'}
-                                                                        </td>
-                                                                        <td className='text-center'>
-                                                                            {user.website ? user.website : 'N/A'}
+                                                                            {user?.profile?.joinedEvents && user?.profile?.joinedEvents.length > 0 ? user?.profile?.joinedEvents.map(event => event.name).join(' , ') : 'N/A'}
                                                                         </td>
                                                                         <td className="td-number text-center">{moment(user.createdAt).format('DD MMM YYYY')}</td>
 
                                                                         <td className="td-actions">
                                                                             <ul className="list-unstyled mb-0 d-flex">
                                                                                 {
-                                                                                    permissions && permissions.viewDeveloperUsers &&
+                                                                                    // permissions && permissions.viewDeveloperUsers &&
                                                                                     <li className="d-flex align-items-center">
                                                                                         <div className='trigger' >
                                                                                             <a
@@ -716,7 +716,7 @@ const DevUser = (props) => {
                                                                                         </div>
                                                                                     </li>}
                                                                                 {
-                                                                                    permissions && permissions.editDeveloperUser &&
+                                                                                    // permissions && permissions.editDeveloperUser &&
                                                                                     <li className="d-flex align-items-center">
                                                                                         <div className='trigger' >
                                                                                             <a
@@ -731,7 +731,7 @@ const DevUser = (props) => {
                                                                                         </div>
                                                                                     </li>}
                                                                                 {
-                                                                                    permissions && permissions.deleteDeveloperUser &&
+                                                                                    // permissions && permissions.deleteDeveloperUser &&
                                                                                     <li className="d-flex align-items-center">
                                                                                         <div className='trigger' >
                                                                                             <a
@@ -799,7 +799,7 @@ const DevUser = (props) => {
                                             <label className="label-font mr-2">Profile Image: </label>
                                             <div>
                                                 <div className="user-view-image">
-                                                    <img src={user.profileImage ? user.profileImage : userDefaultImg} onError={(e) => { e.target.onerror = null; e.target.src = userDefaultImg }} />
+                                                    <img src={user?.profile?.profileImage ? user?.profile?.profileImage  : userDefaultImg} onError={(e) => { e.target.onerror = null; e.target.src = userDefaultImg }} />
                                                 </div>
                                             </div>
                                         </Form.Group>
@@ -815,10 +815,10 @@ const DevUser = (props) => {
                                         </div>
                                         <div className="d-flex name-email">
                                             <Form.Group className='d-flex align-items-center'>
-                                                <label className="label-font mr-2">Description:</label><span className="field-value text-white"> {user.description ? user.description : 'N/A'}</span>
+                                                <label className="label-font mr-2">Joined Event Name:</label><span className="field-value text-white"> {user?.profile?.joinedEvents && user?.profile?.joinedEvents.length > 0 ? user?.profile?.joinedEvents.map(event => event.name).join(' , ') : 'N/A'}</span>
                                             </Form.Group>
                                         </div>
-                                        <div className="d-flex name-email">
+                                        {/* <div className="d-flex name-email">
                                             <Form.Group className='d-flex align-items-center'>
                                                 <label className="label-font mr-2">Company Name: </label><span className="field-value text-white">{user.companyName ? user.companyName : 'N/A'}</span>
                                             </Form.Group>
@@ -832,7 +832,7 @@ const DevUser = (props) => {
                                             <Form.Group className='d-flex align-items-center'>
                                                 <label className="label-font mr-2">Website: </label><span className="field-value text-white">{user.website ? user.website : 'N/A'}</span>
                                             </Form.Group>
-                                        </div>
+                                        </div> */}
                                         {/* <div className="d-flex name-email">
                                             <Form.Group className='d-flex align-items-center'>
                                                 <label className="label-font mr-2">Facebook: </label><span className="field-value text-white">{user.facebookLink ? user.facebookLink : 'N/A'}</span>
@@ -1161,4 +1161,4 @@ const mapStateToProps = state => ({
     getRoleRes: state.role.getRoleRes,
 });
 
-export default connect(mapStateToProps, { beforeUser, getUsers, deleteUser, createUser, editUser, getRole })(DevUser);
+export default connect(mapStateToProps, { beforeUser, getUsers, deleteUser, createUser, editUser, getRole })(SimpleUser);

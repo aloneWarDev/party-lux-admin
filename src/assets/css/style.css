@@ -155,7 +155,7 @@ svg {width: 19;height: 19;stroke: white;stroke-width: 2;}
 .react-date-picker__inputGroup__input {color: white;}
 button:focus {outline: none !important;}
 .form-select {background-position: right 18px center !important;}
-.react-date-picker__wrapper {background-color: transparent;border: 1px solid #585858;border-radius: 4px !important;font-size: 0.875rem;color: #FFFFFF;padding: 8px 12px;height: 40px;box-shadow: none;border-color: #d2d6da;}
+.react-date-picker__wrapper {background-color: transparent;border: 1px solid #585858;border-radius: 4px !important;font-size: 0.875rem;color: #000000;padding: 8px 12px;height: 40px;box-shadow: none;border-color: #000000;}
 .btn-info:hover {color: white !important;}
 .form-control-file:hover:before {background-color: white;border: 1px solid #888888;color: #888888;}
 .form-control-file::before {transition: all ease-in-out 0.3s;}
@@ -208,7 +208,7 @@ button:focus {outline: none !important;}
 .table-bigboy .td-actions .list-unstyled {display: flex;justify-content: center;}
 .table-bigboy .td-actions {text-align: center;}
 .table-bigboy .td-actions ul li {margin: 0 5px 0 0;}
-.table-bigboy .td-actions ul li .btn-action {margin: 0 !important;padding: 8px 9px; line-height: 1.42857143;}
+.table-bigboy .td-actions ul li .btn-action {margin: 0 !important;padding: 8px 9px; line-height: 1.42857143;border-color: #A05ED4;}
 .table-bigboy .td-start{width: 70px; word-break: break-word;}
 .table-bigboy .td-name{width: 300px; word-break: break-word;white-space: initial;}
 .table-bigboy .td-image{width: 200px; word-break: break-word;}
