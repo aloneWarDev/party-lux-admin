@@ -351,7 +351,7 @@ const StaffPermissions = (props) => {
 
                                 {/* <Row>
                                     <Col>
-                                        <span style={{ color: 'white' }}>{`Total : ${total}`}</span>
+                                        <span style={{ color: 'black' }}>{`Total : ${total}`}</span>
                                         <label>&nbsp;</label>
                                     </Col>
                                 </Row>                                 */}
@@ -359,7 +359,7 @@ const StaffPermissions = (props) => {
 
                                     <Card.Header>
                                         <div className='d-flex justify-content-end mb-2 pr-3'>
-                                            <span style={{ color: 'white', fontWeight: 'bold' }}>{`Total : ${total}`}</span>
+                                            <span style={{ color: 'black', fontWeight: 'bold' }}>{`Total : ${total}`}</span>
                                         </div>
 
                                         <div className="d-sm-flex align-items-center justify-content-between">

@@ -142,7 +142,7 @@ class Admin extends Component {
             let roleDecrypted = CryptoJS.AES.decrypt(roleEncrypted, 'secret key 123').toString(CryptoJS.enc.Utf8);
 			role = roleDecrypted
 		}
-		this.props.getRole(role)
+		// this.props.getRole(role)
 		this.props.beforeRole()
 	}
 	componentWillReceiveProps(props) {

@@ -245,13 +245,13 @@ const ThemeSync = (props) => {
                                 <Row className='align-items-baseline'>
                                     <Col xl={3} sm={6}>
                                         <Form.Group>
-                                            <label style={{ color: 'white' }}>Game Id:</label>
+                                            <label style={{ color: 'black' }}>Game Id:</label>
                                             <Form.Control value={searchGameId} type="text" placeholder="Game Id" onChange={(e) => setSearchGameId(e.target.value)} />
                                         </Form.Group>
                                     </Col>
                                     <Col xl={3} sm={6}>
                                         <Form.Group>
-                                            <label style={{ color: 'white' }}>Game Name:</label>
+                                            <label style={{ color: 'black' }}>Game Name:</label>
                                             <Form.Control value={searchGameName} type="text" placeholder="Game Name" onChange={(e) => setSearchGameName(e.target.value)} />
                                         </Form.Group>
                                     </Col>
@@ -286,7 +286,7 @@ const ThemeSync = (props) => {
                         <Card className="table-big-boy">
                             <Card.Header>
                             <div className='d-flex justify-content-end mb-2 pr-3'>
-                                <span  style={{ color: 'white',fontWeight:'bold' }}>{`Total : ${ pagination?.total ? pagination?.total : 0}`}</span>
+                                <span  style={{ color: 'black',fontWeight:'bold' }}>{`Total : ${ pagination?.total ? pagination?.total : 0}`}</span>
                             </div>
                             <div className="d-block d-md-flex align-items-center justify-content-between">
                                 <Card.Title as="h4">Sync Themes </Card.Title>

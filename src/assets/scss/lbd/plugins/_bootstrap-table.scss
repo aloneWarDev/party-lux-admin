@@ -6,7 +6,7 @@
 
 .bootstrap-table .table {
     margin-bottom: 0 !important;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #dc0ed2;
     border-collapse: collapse !important;
     border-radius: 1px;
 }
@@ -43,7 +43,7 @@
 }
 
 .fixed-table-footer {
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid #151414;
 }
 
 .fixed-table-body {
@@ -129,7 +129,7 @@
 
 .fixed-table-container .no-records-found {
     text-align: center;
-    background-color: #FFFFFF !important;
+    background-color: #0c0c0c !important;
     height: 340px;
     border-radius: 10px;
     width: 100%;
@@ -188,7 +188,7 @@
 .fixed-table-toolbar .columns label {
     display: block;
     padding: 10px 20px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #121212;
     clear: both;
     margin-bottom: 0;
     font-weight: normal;
@@ -220,7 +220,7 @@
     bottom: 0;
     left: 0;
     z-index: 99;
-    background-color: #fff;
+    background-color: #0f0e0e;
     text-align: center;
 }
 

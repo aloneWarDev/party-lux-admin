@@ -11,38 +11,38 @@ export const beforeDashboard = () => {
 
 export const getDashboard = () => dispatch => {
     dispatch(emptyError());
-    let url = `${ENV.url}staff/dashboard`;
-    toast.dismiss()
-    fetch(url, {
-        method: 'GET',
-        headers: {
-            'content-type': 'application/json',
-            'Authorization': ENV.Authorization,
-            'x-auth-token': ENV.x_auth_token
-        }
-    }).then(res => res.json()).then(data => {
-        if (data.success) {
-            dispatch({
-                type: GET_DASHBOARD,
-                payload: data.data
-            })
-        } else {
-            toast.error(data.message)
-            dispatch({
-                type: GET_ERRORS,
-                payload: data
-            })
-        }
-    }).catch(error => {
-        if (error.response && error.response.data) {
-            const { data } = error.response
-            if (data.message)
-                toast.error(data.message)
-        }
-        dispatch({
-            type: GET_ERRORS,
-            payload: error
-        })
-    })
+    // let url = `${ENV.url}staff/dashboard`;
+    // toast.dismiss()
+    // fetch(url, {
+    //     method: 'GET',
+    //     headers: {
+    //         'content-type': 'application/json',
+    //         'Authorization': ENV.Authorization,
+    //         'x-auth-token': ENV.x_auth_token
+    //     }
+    // }).then(res => res.json()).then(data => {
+    //     if (data.success) {
+    //         dispatch({
+    //             type: GET_DASHBOARD,
+    //             payload: data.data
+    //         })
+    //     } else {
+    //         toast.error(data.message)
+    //         dispatch({
+    //             type: GET_ERRORS,
+    //             payload: data
+    //         })
+    //     }
+    // }).catch(error => {
+    //     if (error.response && error.response.data) {
+    //         const { data } = error.response
+    //         if (data.message)
+    //             toast.error(data.message)
+    //     }
+    //     dispatch({
+    //         type: GET_ERRORS,
+    //         payload: error
+    //     })
+    // })
 };
 

@@ -267,23 +267,23 @@ const DevSupport = (props) => {
                                             {/* searchContactId */}
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>ContactId</label>
+                                                    <label style={{ color: 'black' }}>ContactId</label>
                                                     <Form.Control value={searchContactId} type="text" placeholder="ContactId" onChange={(e) => setSearchContactId(e.target.value)} /*onKeyDown={} */ />
                                                 </Form.Group>
                                             </Col>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Name</label>
+                                                    <label style={{ color: 'black' }}>Name</label>
                                                     <Form.Control value={searchName} type="text" placeholder="Name" onChange={(e) => setSearchName(e.target.value)} /*onKeyDown={} */ />
                                                 </Form.Group>
                                             </Col>
                                             <Col xl={3} sm={6}>
-                                                <label style={{ color: 'white' }}>Email</label>
+                                                <label style={{ color: 'black' }}>Email</label>
                                                 <Form.Control value={searchEmail} type="text" placeholder="name@mail.com" onChange={(e) => setSearchEmail(e.target.value)}/* onChange={} onKeyDown={} */ />
                                             </Col>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Game</label>
+                                                    <label style={{ color: 'black' }}>Game</label>
                                                     <Form.Control
                                                         as="select"
                                                         className="form-select pr-3 mr-3" aria-label="Default select example"
@@ -299,7 +299,7 @@ const DevSupport = (props) => {
                                             </Col>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>SDK</label>
+                                                    <label style={{ color: 'black' }}>SDK</label>
                                                     <Form.Control
                                                         as="select"
                                                         className="form-select pr-3 mr-3" aria-label="Default select example"
@@ -315,7 +315,7 @@ const DevSupport = (props) => {
                                             </Col>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Environment</label>
+                                                    <label style={{ color: 'black' }}>Environment</label>
                                                     <Form.Control
                                                         as="select"
                                                         className="form-select pr-3 mr-3" aria-label="Default select example"
@@ -331,7 +331,7 @@ const DevSupport = (props) => {
                                                 </Form.Group>
                                             </Col>
                                             <Col xl={3} sm={6}>
-                                                <label style={{ color: 'white' }}>Status</label>
+                                                <label style={{ color: 'black' }}>Status</label>
                                                 <select value={searchStatus} onChange={(e) => setSearchStatus(e.target.value)}>
                                                     <option value="">Select Status</option>
                                                     <option value={0}>In Progress</option>
@@ -358,7 +358,7 @@ const DevSupport = (props) => {
                         </Row>
                         <Row>
                             <Col>
-                                <span style={{ color: 'white' }}>{`Total : ${pagination?.total}`}</span>
+                                <span style={{ color: 'black' }}>{`Total : ${pagination?.total}`}</span>
                                 <label>&nbsp;</label>
                             </Col>
                         </Row>

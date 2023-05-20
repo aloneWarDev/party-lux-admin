@@ -31,7 +31,7 @@ React.useEffect(()=>{
 		let roleDecrypted = CryptoJS.AES.decrypt(roleEncrypted, 'secret key 123').toString(CryptoJS.enc.Utf8);
 		role = roleDecrypted
 	}
-	dispatch(getRole(role))
+	// dispatch(getRole(role))
 
 },[])
 
@@ -44,7 +44,7 @@ React.useEffect(()=>{
 },[getRoleRes])
 
 React.useEffect(()=>{
-	if(permissions && Object.keys(permissions).length > 0){
+	if(permissions && Object.keys(permissions).length > 0 || true){
 
 		// separate those permissions which are false for admin
 		let rolesNotPermitted =  getRolesNotPermitted(permissions)
@@ -65,9 +65,9 @@ React.useEffect(()=>{
 			if(route.collapse && route.submenus.length <= 0){
 				return null
 			}
-			if(!routesNotPermitted.some((r)=> r === route.name)){
+			// if(!routesNotPermitted.some((r)=> r === route.name)){
 				return route
-			}
+			// }
 		});
 			
 		setRoutes(filteredRoutes)

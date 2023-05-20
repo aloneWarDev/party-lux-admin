@@ -14,7 +14,7 @@ export const beforeAdmin = () => {
 export const login = (body) => dispatch => {
     toast.dismiss()
     dispatch(emptyError());
-    const url = `${ENV.url}staff/login`;
+    const url = `${ENV.url}auth/signin`;
 
     fetch(url, {
         method: 'POST',
@@ -25,12 +25,14 @@ export const login = (body) => dispatch => {
         },
         body: JSON.stringify(body)
     }).then(res => res.json()).then(data => {
-        if (data.success) {
+        console.log("data: ",data)
+        if (data.status === 200) {
             // toast.success(data.message)
-            if(data.adminStatus){
+            if(data.data.isVerified){
+                console.log("accessToken: ",data.accessToken)
                 localStorage.setItem("admin-accessToken", data.data.accessToken);
                 
-                activity({activityBy: localStorage.getItem('userID') , type: 1 , activityOnModule : 'login', activityOnId: data.data?._id})
+                // activity({activityBy: localStorage.getItem('userID') , type: 1 , activityOnModule : 'login', activityOnId: data.data?._id})
                 dispatch({
                     type: LOGIN_ADMIN,
                     payload: data

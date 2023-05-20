@@ -14,7 +14,7 @@ input[type=file] {margin: 0 auto;width: 124px;}
 .form-control-file:active {outline: 0;}
 .form-control-file:active::before {background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);}
 /*.custom-control-input:focus~.custom-control-label::before {border-color: red !important; box-shadow: 0 0 0 0.2rem rgba(255, 47, 69, 0.25) !important; }*/
-.custom-control-input:checked~.custom-control-label::before {border-color: #c92626 !important;background-color: #c92626 !important;}
+.custom-control-input:checked~.custom-control-label::before {border-color: #A05ED4 !important;background-color: #A05ED4 !important;}
 /* .custom-control-input:checked~.custom-control-label::after {border-color: red !important;background-color: red !important;} */
 /* .custom-control-input:active~.custom-control-label::before {background-color: green !important;border-color: green !important;} */
 /* .custom-control-input:focus:not(:checked)~.custom-control-label::before {border-color: rgb(20, 149, 255) !important;} */
@@ -23,7 +23,7 @@ input[type=file] {margin: 0 auto;width: 124px;}
 .btn-action {border: 1px solid #ffff;background-color: transparent;margin: 0 5px 0 0;font-weight: 400;padding: 8px;cursor: pointer;border-radius: 5px;}
 .btn-action .fa-eye {color: #e59900;}
 .btn-action .fa-edit {color: #0083ad;}
-.btn-action .fa-trash {color: #c92626;}
+.btn-action .fa-trash {color: #A05ED4;}
 .btn-action:focus .fa-eye, .btn-action:focus .fa-edit, .btn-action:focus .fa-trash{color: #fff;}
 .btn-action:active .fa-eye, .btn-action:active .fa-edit, .btn-action:active .fa-trash{color: #fff;}
 .btn-action:checked .fa-eye, .btn-action:checked .fa-edit, .btn-action:checked .fa-trash{color: #fff;}
@@ -31,7 +31,7 @@ input[type=file] {margin: 0 auto;width: 124px;}
 .btn-action:focus:hover, .btn-action:focus:hover, .btn-action:focus:hover {background-color: transparent !important;}
 .btn-action:focus:hover  .fa-eye {color: #e59900;}
 .btn-action:focus:hover  .fa-edit {color: #0083ad;}
-.btn-action:focus:hover  .fa-trash {color: #c92626;}
+.btn-action:focus:hover  .fa-trash {color: #A05ED4;}
 .card-collection {color: white;}
 .modal-footer .btn-save {color: #28a745 !important;border-color: #28a745 !important;background: transparent !important;}
 .update-pic-btn {min-width: 106px;}
@@ -61,7 +61,7 @@ select>option:hover{background-color: #c30808;}
 .td-modal{min-width: 136px;}
 .nft-flex .form-group {flex: 0 0 50%;}
 .modal .modal-content .modal-body{color: white;}
-.btn-no-bg{color: #fff;}
+.btn-no-bg{color: #A05ED4;}
 .upload-img-file::before{padding: 3px !important;}
 .background-color-card {background-color: #c30808 !important}
 .background-color-card-body {background-color: black !important;}
@@ -72,7 +72,7 @@ select>option:hover{background-color: #c30808;}
 /* Track */
 ::-webkit-scrollbar-track {box-shadow: inset 0 0 5px grey;border-radius: 10px;}
 /* Handle */
-::-webkit-scrollbar-thumb {background: #c92626;border-radius: 10px;}
+::-webkit-scrollbar-thumb {background: #A05ED4;border-radius: 10px;}
 /* Permissions / Roles */
 .check-inline .fancy-checkbox {width: 30%;font-weight: 700;margin-bottom: 10px;vertical-align: top;}
 .check-inline label.fancy-checkbox {font-weight: normal;}
@@ -161,9 +161,9 @@ button:focus {outline: none !important;}
 .form-control-file::before {transition: all ease-in-out 0.3s;}
 .btn-info {transition: all ease-in-out 0.3s !important;}
 .content .btn-info{min-width:90px;}
-.wrapper {background-image: url('../img/background2.png');background-position: center;background-repeat: no-repeat;background-size: contain;position: relative;}
+.wrapper {background-color: white; color: #000;}
 .dlogo {width: 45px;margin: 0 2px 0 0;}
-.table-bigboy td{color: #f7f7f7f1;}
+.table-bigboy td{color: #131313f1;}
 .textlogo {width: 180px;}
 .btn-info:hover {background-color: white !important;border: 1px solid #c30808 !important;color: #c30808 !important;}
 .tooltip {position: relative;display: inline-block;border-bottom: 1px dotted black;}
@@ -182,11 +182,11 @@ button:focus {outline: none !important;}
 /* IE can just show/hide with no transition */
 .lte8 .trigger .tooltip {display: none;}
 .lte8 .trigger:hover .tooltip {display: block;}
-.ct-label {color: #ffffff; }
-.ct-horizontal {color: #c92626 !important; }
+.ct-label {color: #0a0a0a; }
+.ct-horizontal {color: #A05ED4 !important; }
 .x-axis-text{color: #ffffff !important; }
 .x-axis{color: #ffffff !important; }
-.y-axis-text{color: #c92626 !important; }
+.y-axis-text{color: #A05ED4 !important; }
 /* Arslan */
 .ct-vertical ~ .ct-vertical {stroke: none;}
 .ct-horizontal ~ .ct-horizontal {stroke: none;}
@@ -450,14 +450,14 @@ input.streak-count.form-control {
     margin-right: 20px;
 }
 label.red.remove-btn.form-label {
-    color: #c92626;
+    color: #A05ED4;
     font-size: 12px;
-    border: 1px solid #c92626;
+    border: 1px solid #A05ED4;
     cursor: pointer;
     border-radius:6px;
     padding:2px 5px;transition: all ease-in-out 0.3s;
 }
-label.red.remove-btn.form-label:hover{border-color:#c92626;color:#fff;background:#c92626;}
+label.red.remove-btn.form-label:hover{border-color:#A05ED4;color:#fff;background:#A05ED4;}
 /*  */
 .custom-input{position: relative;}
 .eye-icon{position: absolute;right: 6%;top: 58%;}

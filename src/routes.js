@@ -28,6 +28,7 @@ import Admin from 'layouts/Admin';
 import UnAuth from 'layouts/Auth';
 
 import Dashboard from "views/Dashboard.js";
+// import WebSdk from 'views/WebSdk.js'
 import Login from "./views/Login/Login";
 import Users from "./views/Users/Users"
 import SiteSettings from "views/Settings/SiteSettings";
@@ -162,9 +163,9 @@ var routes = [
     showInSideBar: true,
     submenus: [
       {
-        path: "/developer-users",
+        path: "/simple-users",
         layout: Admin,
-        name: "Developer User",
+        name: "Simple User",
         icon: "nc-icon nc-grid-45",
         faicon: faUser,
         access: true, exact: true,
@@ -172,9 +173,9 @@ var routes = [
         showInSideBar: true,
       },
       {
-        path: "/player-users",
+        path: "/business-users",
         layout: Admin,
-        name: "Player User",
+        name: "Business User",
         icon: "nc-icon nc-grid-45",
         faicon: faUser,
         access: true, exact: true,

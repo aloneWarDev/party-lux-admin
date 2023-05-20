@@ -88,13 +88,13 @@
     }
     &.edit-cotnact-modal{
         #status-dropDown{
-            border-color:#c92626;
-            background:#c92626;
+            border-color:#A05ED4;
+            background:#A05ED4;
             color:#fff;
             &:hover{
-                border-color:#c92626;
+                border-color:#A05ED4;
                 background:#fff;
-                color:#c92626;
+                color:#A05ED4;
             }
             &:not(:disabled):not(.disabled):active:focus{
                 box-shadow:none !important;

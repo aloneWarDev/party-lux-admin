@@ -473,12 +473,12 @@ const Season = (props) =>{
                                 <Card.Body>
                                     <Row>
                                         <Col xl={4} sm={6}>
-                                            <label style={{ color: 'white' }}>Name</label>
+                                            <label style={{ color: 'black' }}>Name</label>
                                             <Form.Control value={searchName} type="text" placeholder="Name" onChange={(e) => setSearchName(e.target.value)} />
                                         </Col>
                                         <Col xl={4} sm={6}>
                                             <Form.Group>
-                                                <label style={{ color: 'white' }}>Environment Type</label>
+                                                <label style={{ color: 'black' }}>Environment Type</label>
                                                 <Form.Control as="select" className="form-select pr-3 mr-3" aria-label="Default select example"
                                                     value={searchEnvironmentType} onChange={(e) => setSearchEnvironmentType(e.target.value)}
                                                 >
@@ -488,13 +488,13 @@ const Season = (props) =>{
                                             </Form.Group>
                                         </Col>
                                         <Col xl={4} sm={6}>
-                                            <label style={{ color: 'white' }}>Start Date &amp; Time</label>
+                                            <label style={{ color: 'black' }}>Start Date &amp; Time</label>
                                             <Form.Group>
                                                 <DatePicker onChange={(value) => {setSearchCreatedAtFrom(value); /*handleSearchDate(value , 1)*/} } value={searchAtFrom ? searchAtFrom : null}    maxDate={ searchAtTo ? new Date(searchAtTo) : new Date("2025-01-01") } />
                                             </Form.Group>
                                         </Col>
                                         <Col xl={4} sm={6}>
-                                            <label style={{ color: 'white' }}>End Date &amp; Time</label>
+                                            <label style={{ color: 'black' }}>End Date &amp; Time</label>
                                             <Form.Group>
                                                 <DatePicker onChange={(val)=>{  setSearchCreatedAtTo(val); /*handleSearchDate(val , 2)*/ } }  value={searchAtTo ? searchAtTo : null} minDate={ searchAtFrom ? new Date(searchAtFrom) : new Date("1800-01-01") } />
                                             </Form.Group>
@@ -529,7 +529,7 @@ const Season = (props) =>{
                             <Card className="table-big-boy">
                                 <Card.Header>
                                 <div className='d-flex justify-content-end mb-2 pr-3'>
-                                <span  style={{ color: 'white',fontWeight:'bold' }}> {`Total : ${pagination?.total}`}</span>
+                                <span  style={{ color: 'black',fontWeight:'bold' }}> {`Total : ${pagination?.total}`}</span>
                                 </div>
                                     <div className="d-block d-md-flex align-items-center justify-content-between">
                                         <Card.Title as="h4">Seasons</Card.Title>

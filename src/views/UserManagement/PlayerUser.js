@@ -564,20 +564,20 @@ const PlayerUser = (props) => {
                                         <Row className='align-items-baseline'>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Name</label>
+                                                    <label style={{ color: 'black' }}>Name</label>
                                                     <Form.Control value={searchUsername} type="text" placeholder="John" onChange={(e) => setSearchName(e.target.value)} /*onKeyDown={} */ />
                                                 </Form.Group>
                                             </Col>
                                             <Col xl={3} sm={6}>
-                                                <label style={{ color: 'white' }}>Wallet Address</label>
+                                                <label style={{ color: 'black' }}>Wallet Address</label>
                                                 <Form.Control value={searchAddress} type="text" placeholder="Wallet Address" onChange={(e) => setSearchAddress(e.target.value)}/* onChange={} onKeyDown={} */ />
                                             </Col>
                                             <Col xl={3} sm={6}>
-                                                <label style={{ color: 'white' }}>Email</label>
+                                                <label style={{ color: 'black' }}>Email</label>
                                                 <Form.Control value={searchEmail} type="text" placeholder="john@gmail.com" onChange={(e) => setSearchEmail(e.target.value)}/* onChange={} onKeyDown={} */ />
                                             </Col>
                                             <Col xl={3} sm={6}>
-                                                <label style={{ color: 'white' }}>Created At From</label>
+                                                <label style={{ color: 'black' }}>Created At From</label>
 
                                                 <Form.Group>
                                                     <DatePicker onChange={(e) => { handleDate(e, setSearchCreatedAtFrom, 1) }} closeCalendar={isOpenCalenderFrom} value={searchAtFrom ? searchAtFrom : null} maxDate={searchAtTo ? new Date(searchAtTo) : new Date()} minDate={minOfSearchAtTo ? new Date(minOfSearchAtTo) : new Date("1800-01-01")} />
@@ -585,7 +585,7 @@ const PlayerUser = (props) => {
                                                 </Form.Group>
                                             </Col>
                                             <Col xl={3} sm={6}>
-                                                <label style={{ color: 'white' }}>Created At To</label>
+                                                <label style={{ color: 'black' }}>Created At To</label>
 
                                                 <Form.Group>
                                                     <DatePicker onChange={(e) => { handleDate(e, setSearchCreatedAtTo, 2) }} closeCalendar={isOpenCalenderAtTo} value={searchAtTo ? searchAtTo : null} maxDate={new Date()} minDate={searchAtFrom ? new Date(searchAtFrom) : new Date("1800-01-01")} />
@@ -619,7 +619,7 @@ const PlayerUser = (props) => {
                                 <Card className="table-big-boy">
                                     <Card.Header>
                                         <div className='d-flex justify-content-end mb-2 pr-3'>
-                                            <span style={{ color: 'white', fontWeight: 'bold' }}>{`Total : ${pagination?.total}`}</span>
+                                            <span style={{ color: 'black', fontWeight: 'bold' }}>{`Total : ${pagination?.total}`}</span>
                                         </div>
                                         <div className="d-block d-sm-flex align-items-center justify-content-between">
                                             <Card.Title as="h4" className='mb-2 mb-sm-0'>Player Users</Card.Title>

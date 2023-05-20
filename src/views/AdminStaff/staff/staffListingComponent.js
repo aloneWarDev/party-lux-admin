@@ -192,7 +192,7 @@ const AdminStaff = (props) => {
                                 <Card className="table-big-boy">
                                     <Card.Header>
                                         <div className='d-flex justify-content-end mb-2 pr-3'>
-                                            <span style={{ color: 'white', fontWeight: 'bold' }}>{`Total : ${total}`}</span>
+                                            <span style={{ color: 'black', fontWeight: 'bold' }}>{`Total : ${total}`}</span>
                                         </div>
                                         <div className="d-flex align-items-center justify-content-between">
                                             <Card.Title as="h4">Staff</Card.Title>

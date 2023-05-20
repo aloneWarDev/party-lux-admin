@@ -435,7 +435,7 @@ const Games = (props) => {
                                         <Row>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Game ID</label>
+                                                    <label style={{ color: 'black' }}>Game ID</label>
                                                     <Form.Control value={searchGameId} type="text" placeholder="Game ID" 
                                                     onChange={
                                                         (e) =>{
@@ -449,12 +449,12 @@ const Games = (props) => {
                                                 </Form.Group>
                                             </Col>
                                             <Col xl={3} sm={6}>
-                                                <label style={{ color: 'white' }}>Name</label>
+                                                <label style={{ color: 'black' }}>Name</label>
                                                 <Form.Control value={searchName} type="text" placeholder="Name" onChange={(e) => setSearchName(e.target.value)} />
                                             </Col>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Platform Type</label>
+                                                    <label style={{ color: 'black' }}>Platform Type</label>
                                                     <Form.Control as="select" className="form-select pr-3 mr-3" aria-label="Default select example"
                                                         value={searchPlatformType} onChange={(e) => setSearchPlatformType(e.target.value)}
                                                     >
@@ -465,7 +465,7 @@ const Games = (props) => {
                                             </Col>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Development Environment</label>
+                                                    <label style={{ color: 'black' }}>Development Environment</label>
                                                     <Form.Control as="select" className="form-select pr-3 mr-3" aria-label="Default select example"
                                                         value={searchDevelopmentEnv} onChange={(e) => setSearchDevelopmentEnv(e.target.value)}
                                                     >
@@ -476,7 +476,7 @@ const Games = (props) => {
                                             </Col>
                                             <Col xl={3} sm={6}>
                                                 <Form.Group>
-                                                    <label style={{ color: 'white' }}>Launch Request</label>
+                                                    <label style={{ color: 'black' }}>Launch Request</label>
                                                     <Form.Control as="select" className="form-select pr-3 mr-3" aria-label="Default select example"
                                                         value={searchLaunchRequest} onChange={(e) => setSearchLaunchRequest(e.target.value)}
                                                     >
@@ -505,7 +505,7 @@ const Games = (props) => {
                                 <Card className="table-big-boy">
                                     <Card.Header>
                                         <div className='d-flex justify-content-end mb-2 pr-3'>
-                                            <span style={{ color: 'white', fontWeight: 'bold' }}>{`Total : ${pagination?.total}`}</span>
+                                            <span style={{ color: 'black', fontWeight: 'bold' }}>{`Total : ${pagination?.total}`}</span>
                                         </div>
                                         <div className="d-block d-sm-flex align-items-center justify-content-between">
                                             <Card.Title as="h4" className='mb-2 mb-sm-0'>Games</Card.Title>
