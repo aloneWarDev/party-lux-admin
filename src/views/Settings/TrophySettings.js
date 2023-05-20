@@ -111,7 +111,7 @@ const TrophySettings = (props) => {
 	return (
 		<>
 			{
-				loader ? <FullPageLoader/> :
+				!loader ? <FullPageLoader/> :
 				<Container fluid>
 					<Row>
 						<Col md="12">

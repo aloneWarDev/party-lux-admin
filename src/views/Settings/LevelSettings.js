@@ -140,7 +140,7 @@ const LevelSettings = (props) => {
 	return (
 		<>
 			{
-				loader ? <FullPageLoader /> :
+				!loader ? <FullPageLoader /> :
 					<Container fluid>
 						<Row>
 							<Col md="12">
@@ -163,13 +163,16 @@ const LevelSettings = (props) => {
 																}
 																<div className="label-holder d-flex justify-content-between align-items-center mb-2">
 																	<Form.Label className="d-block mr-3 flex-fill">Level Number</Form.Label>
-																	<Form.Control type="number" value={setting.levelNumber} readOnly={true} className="level-number-input"></Form.Control>
+																	{/* <Form.Control type="number" value={setting.levelNumber} readOnly={true} className="level-number-input"></Form.Control> */}
 																</div>
 																<Form.Control className="w-100" type="text" value={setting.levelName} onChange={(e) => { updateValue(index, 'levelName', e.target.value) }} ></Form.Control>
 															</Form.Group>
 														</Col>
 														<Col xl={3} sm={6}>
 															<Form.Group className="d-block">
+																{settings.length - 1 == index &&
+																	<Form.Label className="d-block mr-3 red" onClick={() => removeLevel(index)}>X</Form.Label>
+																}
 																<div className="label-holder mb-2">
 																	<Form.Label className="d-block mr-3">User has to win </Form.Label>
 																</div>
@@ -179,7 +182,7 @@ const LevelSettings = (props) => {
 																</div>
 															</Form.Group>
 														</Col>
-														<Col xl={2} sm={6}>
+														{/* <Col xl={2} sm={6}>
 															<Form.Group className="d-block">
 																<div className="label-holder mb-2">
 																	<Form.Label className="d-block mr-3">and will have</Form.Label>
@@ -203,7 +206,7 @@ const LevelSettings = (props) => {
 																	<Form.Label className="d-block ml-2"> games </Form.Label>
 																</div>
 															</Form.Group>
-														</Col>
+														</Col> */}
 														{
 															( setting.streakType === 1 || setting.streakType === "1" ) ?
 																<Col xl={2} sm={6} >
@@ -231,7 +234,7 @@ const LevelSettings = (props) => {
 													<Button variant="success" onClick={addNewLevel} className="float-left">Add new</Button>
 												</Col>
 												{
-													permissions && permissions.editSetting &&
+													// permissions && permissions.editSetting &&
 													<Col sm={6}>
 														<Button variant="info" onClick={submit} className="float-right">Save</Button>
 													</Col>

@@ -21,7 +21,7 @@ import { getRole } from 'views/AdminStaff/permissions/permissions.actions';
 
 var CryptoJS = require("crypto-js");
 
-const PlayerUser = (props) => {
+const BusinessUser = (props) => {
     const dispatch = useDispatch()
     const history = useHistory()
 
@@ -79,7 +79,7 @@ const PlayerUser = (props) => {
 
     useEffect(() => {
         // const qs = ENV.objectToQueryString({ page: 1, limit: 10 })
-        const filter = { type: '2' }
+        const filter = { role: "business", all: false }
         reset()
         // if (searchUsername !== undefined && searchUsername !== null && searchUsername !== '')
         //     filter.username = searchUsername
@@ -94,20 +94,20 @@ const PlayerUser = (props) => {
 
         window.scroll(0, 0)
         props.getUsers('', filter)
-        let roleEncrypted = localStorage.getItem('role');
-        let role = ''
-        if (roleEncrypted) {
-            let roleDecrypted = CryptoJS.AES.decrypt(roleEncrypted, 'secret key 123').toString(CryptoJS.enc.Utf8);
-            role = roleDecrypted
-        }
-        props.getRole(role)
+        // let roleEncrypted = localStorage.getItem('role');
+        // let role = ''
+        // if (roleEncrypted) {
+        //     let roleDecrypted = CryptoJS.AES.decrypt(roleEncrypted, 'secret key 123').toString(CryptoJS.enc.Utf8);
+        //     role = roleDecrypted
+        // }
+        // props.getRole(role)
     }, [])
 
-    useEffect(() => {
-        if (Object.keys(props.getRoleRes).length > 0) {
-            setPermissions(props.getRoleRes.role)
-        }
-    }, [props.getRoleRes])
+    // useEffect(() => {
+    //     if (Object.keys(props.getRoleRes).length > 0) {
+    //         setPermissions(props.getRoleRes.role)
+    //     }
+    // }, [props.getRoleRes])
 
 
     useEffect(() => {
@@ -115,89 +115,90 @@ const PlayerUser = (props) => {
             const { users, pagination } = props.user
             setUsers(users)
             setPagination(pagination)
+            // setLoader(false)
             props.beforeUser()
         }
     }, [props.user.getUserAuth])
 
-    useEffect(() => {
-        if (props.user.upsertUserAuth) {
-            setLoader(true)
+    // useEffect(() => {
+    //     if (props.user.upsertUserAuth) {
+    //         setLoader(true)
             
-            let filtered = users.filter((item) => {
-                if (item._id !== props.user.userId)
-                    return item
-            })
+    //         let filtered = users.filter((item) => {
+    //             if (item._id !== props.user.userId)
+    //                 return item
+    //         })
             
-            setUsers([...filtered, props.user.user])
-            setLoader(false)
-            const filter = { type: '2' }
-            if (searchUsername) {
-                filter.username = searchUsername
-                localStorage.setItem('playerUser_name', searchUsername)
+    //         setUsers([...filtered, props.user.user])
+    //         setLoader(false)
+    //         const filter = { role: "business" }
+    //         if (searchUsername) {
+    //             filter.username = searchUsername
+    //             localStorage.setItem('playerUser_name', searchUsername)
 
-            }
-            if (searchEmail) {
-                filter.email = searchEmail
-                localStorage.setItem('playerUsers_email', searchEmail)
-            }
-            if (searchAddress) {
-                filter.walletAddress = searchAddress
-                localStorage.setItem('userWalletAddress', searchAddress)
+    //         }
+    //         if (searchEmail) {
+    //             filter.email = searchEmail
+    //             localStorage.setItem('playerUsers_email', searchEmail)
+    //         }
+    //         if (searchAddress) {
+    //             filter.walletAddress = searchAddress
+    //             localStorage.setItem('userWalletAddress', searchAddress)
 
-            }
-            if (searchAtFrom) {
-                filter.createdAtFrom = searchAtFrom
-                localStorage.setItem('CreatedAtFrom', searchAtFrom)
+    //         }
+    //         if (searchAtFrom) {
+    //             filter.createdAtFrom = searchAtFrom
+    //             localStorage.setItem('CreatedAtFrom', searchAtFrom)
 
-            }
-            if (searchAtTo) {
-                filter.createdAtTo = searchAtTo
-                localStorage.setItem('CreatedAtTo', searchAtTo)
-            }
-            const qs = ENV.objectToQueryString({ page: Page, limit: 10 })
-            props.getUsers(qs, filter, '', false, false)
-            props.beforeUser()
-        }
-    }, [props.user.upsertUserAuth])
+    //         }
+    //         if (searchAtTo) {
+    //             filter.createdAtTo = searchAtTo
+    //             localStorage.setItem('CreatedAtTo', searchAtTo)
+    //         }
+    //         const qs = ENV.objectToQueryString({ page: Page, limit: 10 })
+    //         props.getUsers(qs, filter, '', false, false)
+    //         props.beforeUser()
+    //     }
+    // }, [props.user.upsertUserAuth])
+
+    // useEffect(() => {
+    //     if (props.user.deleteUserAuth) {
+    //         // let filtered = users.filter((item) => {
+    //         //     if (item._id !== props.user.userId)
+    //         //         return item
+    //         // })
+    //         // setUsers(filtered)
+    //         const filter = { type: '2' }
+    //         if (searchUsername) {
+    //             filter.username = searchUsername
+    //             localStorage.setItem('playerUser_name', searchUsername)
+    //         }
+    //         if (searchEmail) {
+    //             filter.email = searchEmail
+    //             localStorage.setItem('playerUsers_email', searchEmail)
+    //         }
+    //         if (searchAddress) {
+    //             filter.walletAddress = searchAddress
+    //             localStorage.setItem('userWalletAddress', searchAddress)
+    //         }
+    //         if (searchAtFrom) {
+    //             filter.createdAtFrom = searchAtFrom
+    //             localStorage.setItem('CreatedAtFrom', searchAtFrom)
+    //         }
+    //         if (searchAtTo) {
+    //             filter.createdAtTo = searchAtTo
+    //             localStorage.setItem('CreatedAtTo', searchAtTo)
+    //         }
+            
+    //         const qs = ENV.objectToQueryString({ page: Page, limit: 10 })
+    //         window.scroll(0, 0)
+    //         props.getUsers(qs, filter)
+    //         props.beforeUser()
+    //     }
+    // }, [props.user.deleteUserAuth])
 
     useEffect(() => {
-        if (props.user.deleteUserAuth) {
-            // let filtered = users.filter((item) => {
-            //     if (item._id !== props.user.userId)
-            //         return item
-            // })
-            // setUsers(filtered)
-            const filter = { type: '2' }
-            if (searchUsername) {
-                filter.username = searchUsername
-                localStorage.setItem('playerUser_name', searchUsername)
-            }
-            if (searchEmail) {
-                filter.email = searchEmail
-                localStorage.setItem('playerUsers_email', searchEmail)
-            }
-            if (searchAddress) {
-                filter.walletAddress = searchAddress
-                localStorage.setItem('userWalletAddress', searchAddress)
-            }
-            if (searchAtFrom) {
-                filter.createdAtFrom = searchAtFrom
-                localStorage.setItem('CreatedAtFrom', searchAtFrom)
-            }
-            if (searchAtTo) {
-                filter.createdAtTo = searchAtTo
-                localStorage.setItem('CreatedAtTo', searchAtTo)
-            }
-            
-            const qs = ENV.objectToQueryString({ page: Page, limit: 10 })
-            window.scroll(0, 0)
-            props.getUsers(qs, filter)
-            props.beforeUser()
-        }
-    }, [props.user.deleteUserAuth])
-
-    useEffect(() => {
-        if (users) {
+        if (users&& users.length) {
             setLoader(false)
             if (window.location.search) {
                 const urlParams = new URLSearchParams(window.location.search);
@@ -503,8 +504,9 @@ const PlayerUser = (props) => {
         setMaxOfSearchAtTo("")
         setPage(1)
         const qs = ENV.objectToQueryString({ page: 1, limit: 10 })
-        props.getUsers(qs, { type: '2' })
         setLoader(true)
+        props.getUsers(qs, { role: "business" })
+       
         localStorage.removeItem('playerUser_name')
         localStorage.removeItem('playerUsers_email')
         localStorage.removeItem('userWalletAddress')
@@ -622,9 +624,9 @@ const PlayerUser = (props) => {
                                             <span style={{ color: 'black', fontWeight: 'bold' }}>{`Total : ${pagination?.total}`}</span>
                                         </div>
                                         <div className="d-block d-sm-flex align-items-center justify-content-between">
-                                            <Card.Title as="h4" className='mb-2 mb-sm-0'>Player Users</Card.Title>
+                                            <Card.Title as="h4" className='mb-2 mb-sm-0'>Business Users</Card.Title>
                                             {
-                                                permissions && permissions.addPlayerUser &&
+                                                // permissions && permissions.addPlayerUser &&
                                                 <Button
                                                     variant="info"
                                                     className="float-sm-right mb-0"
@@ -644,7 +646,7 @@ const PlayerUser = (props) => {
                                                         <th className="td-image text-center">Image</th>
                                                         <th className="td-name text-center">Username</th>
                                                         <th className="td-email text-center">Email</th>
-                                                        <th className="td-address text-center">Wallet Address</th>
+                                                        <th className="td-sdk text-center">Joined Event Name</th>
                                                         <th className="td-created text-center">Created At</th>
                                                         <th className="td-actions text-center">Actions</th>
                                                     </tr>
@@ -659,7 +661,7 @@ const PlayerUser = (props) => {
                                                                         <td className='table-img-center'>
                                                                             <div className="user-image">
                                                                                 {/* {} */}
-                                                                                <img className="img-fluid" alt="User Image" src={user.profileImage ? user.profileImage : userDefaultImg} onError={(e) => { e.target.onerror = null; e.target.src = userDefaultImg }} />
+                                                                                <img className="img-fluid" alt="User Image" src={user?.profile?.profileImage ? user?.profile?.profileImage : userDefaultImg} onError={(e) => { e.target.onerror = null; e.target.src = userDefaultImg }} />
                                                                             </div>
                                                                         </td>
                                                                         <td className="td-name text-center">
@@ -676,14 +678,14 @@ const PlayerUser = (props) => {
                                                                             {user.email ? user.email : 'N/A'}
                                                                         </td>
                                                                         <td className="td-address td-address-in text-center">
-                                                                            {user.walletAddress ? user.walletAddress : 'N/A'}
+                                                                        {user?.profile?.joinedEvents && user?.profile?.joinedEvents.length > 0 ? user?.profile?.joinedEvents.map(event => event.name).join(' , ') : 'N/A'}
                                                                         </td>
                                                                         <td className="td-number text-center">{moment(user.createdAt).format('DD MMM YYYY')}</td>
 
                                                                         <td className="td-actions">
                                                                             <ul className="list-unstyled mb-0 d-flex">
                                                                                 {
-                                                                                    permissions && permissions.viewPlayerUsers &&
+                                                                                    // permissions && permissions.viewPlayerUsers &&
                                                                                     <li className="d-flex align-items-center">
                                                                                         <div className='trigger'>
                                                                                             <a
@@ -700,7 +702,7 @@ const PlayerUser = (props) => {
                                                                                 }
 
                                                                                 {
-                                                                                    permissions && permissions.editPlayerUser &&
+                                                                                    // permissions && permissions.editPlayerUser &&
 
                                                                                     <li className="d-flex align-items-center">
                                                                                         <div className='trigger' >
@@ -718,7 +720,7 @@ const PlayerUser = (props) => {
                                                                                 }
 
                                                                                 {
-                                                                                    permissions && permissions.deletePlayerUser &&
+                                                                                    // permissions && permissions.deletePlayerUser &&
 
                                                                                     <li className="d-flex align-items-center">
                                                                                         <div className='trigger' >
@@ -1128,4 +1130,4 @@ const mapStateToProps = state => ({
 });
 
 
-export default connect(mapStateToProps, { beforeUser, getUsers, deleteUser, createUser, editUser, getRole })(PlayerUser);
+export default connect(mapStateToProps, { beforeUser, getUsers, deleteUser, createUser, editUser, getRole })(BusinessUser);
