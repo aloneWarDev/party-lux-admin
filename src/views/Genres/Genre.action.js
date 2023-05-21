@@ -15,7 +15,7 @@ export const getGenres = (qs = '', body = {}, toastCheck ,search ) => dispatch =
     if(!qs && toastCheck){
         toast.dismiss()
     }
-    let url = `${ENV.url}genres/list`;
+    let url = `${ENV.url}memberships/list`;
     if (qs)
         url += `?${qs}`
 
@@ -30,9 +30,9 @@ export const getGenres = (qs = '', body = {}, toastCheck ,search ) => dispatch =
     }).then(res => res.json()).then(data => {
         if (data.success) {
 
-            if(search){
-                activity({activityBy: localStorage.getItem('userID') , type: 5 , activityOnModule : 'Genre', activityOnId: null})
-            }
+            // if(search){
+            //     activity({activityBy: localStorage.getItem('userID') , type: 5 , activityOnModule : 'Genre', activityOnId: null})
+            // }
             dispatch({
                 type: GET_GENRES,
                 payload: data.data
@@ -198,10 +198,10 @@ export const deleteGenre = (genreId) => dispatch => {
 };
 
 
-export const getGenre = (genreId) => dispatch => {
+export const getGenre = (memberId) => dispatch => {
     dispatch(emptyError());
     toast.dismiss()
-    let url = `${ENV.url}genres/get/${genreId}`;
+    let url = `${ENV.url}memberships/get/${memberId}`;
 
     fetch(url, {
         method: 'GET',
