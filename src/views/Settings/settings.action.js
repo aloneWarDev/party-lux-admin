@@ -93,7 +93,7 @@ export const editSettings = (body, qs = '',) => dispatch => {
 export const updateLevelSettings = (body, qs = '',) => dispatch => {
     dispatch(emptyError());
     toast.dismiss()
-    let url = `${ENV.url}settings/update-level-settings`;
+    let url = `${ENV.url}settings/update-party-essential`;
 
     fetch(url, {
         method: 'PUT',
@@ -132,7 +132,7 @@ export const updateLevelSettings = (body, qs = '',) => dispatch => {
 export const getLevelSettings = () => dispatch => {
     dispatch(emptyError());
     toast.dismiss()
-    let url = `${ENV.url}settings/get-level-settings`;
+    let url = `${ENV.url}settings/get-party-essential`;
 
     fetch(url, {
         headers: {

@@ -4,6 +4,7 @@ import { beforeSettings, updateLevelSettings, getLevelSettings } from './setting
 import { connect } from 'react-redux';
 import { getRole } from "views/AdminStaff/permissions/permissions.actions";
 import FullPageLoader from "components/FullPageLoader/FullPageLoader";
+import TagsInput from "./TagInput";
 import Swal from 'sweetalert2';
 var CryptoJS = require("crypto-js");
 import validator from 'validator';
@@ -22,32 +23,31 @@ import {
 
 const LevelSettings = (props) => {
 
+	const [music , setMusic] = useState([])
+	const [show ,setShow] = useState(true)
+	const [entertainment , setEntertainment] = useState([])
+	const [showEntertainment ,setShowEntertainment] = useState(true)
+	const [partEssential ,setPartyEssential] = useState({
+		music: [],
+		entertainment: [],
+		disclaimer: []
+	})
 	const [permissions, setPermissions] = useState({})
 	const [loader, setLoader] = useState(true)
 	const [noOfLevels, setNoOfLevels] = useState(1)
-	const [settings, setSettings] = useState([
-		{
-			levelNumber: 0,
-			levelName: 0,
-			noOfWins: 0,
-			noOfStreaks: 0,
-			streakType: 0,
-			noOfGameStreak: 0,
-			winPercentage: 0
-		}
-	])
+	const [settings, setSettings] = useState({})
 
 	useEffect(() => {
 		window.scroll(0, 0)
 		setLoader(true);
 		props.getLevelSettings()
-		let roleEncrypted = localStorage.getItem('role');
-		let role = ''
-		if (roleEncrypted) {
-			let roleDecrypted = CryptoJS.AES.decrypt(roleEncrypted, 'secret key 123').toString(CryptoJS.enc.Utf8);
-			role = roleDecrypted
-		}
-		props.getRole(role)
+		// let roleEncrypted = localStorage.getItem('role');
+		// let role = ''
+		// if (roleEncrypted) {
+		// 	let roleDecrypted = CryptoJS.AES.decrypt(roleEncrypted, 'secret key 123').toString(CryptoJS.enc.Utf8);
+		// 	role = roleDecrypted
+		// }
+		// props.getRole(role)
 	}, [])
 
 	useEffect(() => {
@@ -68,6 +68,9 @@ const LevelSettings = (props) => {
 	useEffect(() => {
 		if (props.settings.getlevelsettingsAuth) {
 			setLoader(false)
+			setMusic(props.settings.levelsettings.partyEssential.music ? props.settings.levelsettings.partyEssential.music : [])
+			setEntertainment(props.settings.levelsettings.partyEssential.entertainment ? props.settings.levelsettings.partyEssential.entertainment : [])
+			// console.log("props.settings.levelsettings: ",props.settings.levelsettings.partyEssential.music)
 			setSettings(props.settings.levelsettings)
 			props.beforeSettings()
 		}
@@ -77,30 +80,43 @@ const LevelSettings = (props) => {
 	}, [settings])
 
 
+	const save = ()=>{
+		let check = true
+		const error = {}
+		setShowEntertainment(false)
+		if (check) {
+			console.log("music - list: " , entertainment)
+			props.updateLevelSettings({
+				partyEssential : {
+					music: music ? music : [] , 
+					entertainment
+				}
+			})
+
+			setLoader(true)
+		}
+	}
 
 	const submit = () => {
 		let check = true
 		const error = {}
-
+		setShow(false)
 		if (check) {
-			props.updateLevelSettings(settings)
+			console.log("music - list: " , music)
+			props.updateLevelSettings({
+				partyEssential : {
+					music,
+					entertainment : entertainment ? entertainment: []
+				}
+			})
+
 			setLoader(true)
 		}
 	}
 	const addNewLevel = () => {
-		let settings_ = settings
-		let levelNumber = settings_.length > 0 ? settings_[settings_.length - 1].levelNumber + 1 : 1
-		setSettings([...settings_,
-		{
-			levelNumber: levelNumber,
-			levelName: '',
-			noOfWins: 0,
-			noOfStreaks: 0,
-			streakType: 0,
-			noOfGameStreak: 0
-		}
-		])
+		setShow(true)
 	}
+
 	const removeLevel = (index) => {
 		Swal.fire({
             title: 'Are you sure you want to delete?',
@@ -140,7 +156,7 @@ const LevelSettings = (props) => {
 	return (
 		<>
 			{
-				!loader ? <FullPageLoader /> :
+				loader ? <FullPageLoader /> :
 					<Container fluid>
 						<Row>
 							<Col md="12">
@@ -148,27 +164,30 @@ const LevelSettings = (props) => {
 									<Card className="table-big-boy">
 										<Card.Header>
 											<div className="d-block d-md-flex align-items-center justify-content-between">
-												<Card.Title as="h4">Level Settings</Card.Title>
+												<Card.Title as="h4">Music Settings</Card.Title>
 											</div>
 										</Card.Header>
 
 										<Card.Body>
-											{settings.map((setting, index) => {
+										
+										{console.log("show : " , show)}
+										<TagsInput values={music}  onChange={tags => console.log(tags)}  result={setMusic} inputBool={show}/>
+										{/* {settings.map((setting, index) => {
 												return (
-													<Row key={index} className="form-inline levels-row mb-4">
-														<Col xl={3} sm={6}>
+													<Row key={index} className="form-inline levels-row mb-4"> */}
+														{/* <Col xl={3} sm={6}>
 															<Form.Group className="d-block">
 																{settings.length - 1 == index &&
 																	<Form.Label className="d-block mr-3 red" onClick={() => removeLevel(index)}>X</Form.Label>
 																}
 																<div className="label-holder d-flex justify-content-between align-items-center mb-2">
 																	<Form.Label className="d-block mr-3 flex-fill">Level Number</Form.Label>
-																	{/* <Form.Control type="number" value={setting.levelNumber} readOnly={true} className="level-number-input"></Form.Control> */}
+																	{/* <Form.Control type="number" value={setting.levelNumber} readOnly={true} className="level-number-input"></Form.Control> 
 																</div>
 																<Form.Control className="w-100" type="text" value={setting.levelName} onChange={(e) => { updateValue(index, 'levelName', e.target.value) }} ></Form.Control>
 															</Form.Group>
-														</Col>
-														<Col xl={3} sm={6}>
+														</Col> */}
+														{/* <Col xl={3} sm={6}>
 															<Form.Group className="d-block">
 																{settings.length - 1 == index &&
 																	<Form.Label className="d-block mr-3 red" onClick={() => removeLevel(index)}>X</Form.Label>
@@ -181,7 +200,7 @@ const LevelSettings = (props) => {
 																	<Form.Label className="d-block ml-2"> games </Form.Label>
 																</div>
 															</Form.Group>
-														</Col>
+														</Col> */}
 														{/* <Col xl={2} sm={6}>
 															<Form.Group className="d-block">
 																<div className="label-holder mb-2">
@@ -207,7 +226,7 @@ const LevelSettings = (props) => {
 																</div>
 															</Form.Group>
 														</Col> */}
-														{
+														{/* {
 															( setting.streakType === 1 || setting.streakType === "1" ) ?
 																<Col xl={2} sm={6} >
 																	<Form.Group className="d-block">
@@ -222,16 +241,16 @@ const LevelSettings = (props) => {
 																</Col>
 																:
 																<></>
-														}
+														} */}
 
-													</Row>
+													{/* </Row>
 												)
-											})}
+											})} */}
 										</Card.Body>
 										<Card.Footer>
 											<Row >
 												<Col sm={6}>
-													<Button variant="success" onClick={addNewLevel} className="float-left">Add new</Button>
+													<Button variant="success" onClick={addNewLevel} className="float-left">Edit</Button>
 												</Col>
 												{
 													// permissions && permissions.editSetting &&
@@ -243,6 +262,49 @@ const LevelSettings = (props) => {
 										</Card.Footer>
 									</Card>
 								</Form>
+							</Col>
+
+							<Col md="12">
+							<Form action="" className="form-horizontal" id="TypeValidation" method="">
+								<Card className="table-big-boy">
+									<Card.Header>
+										<div className="d-block d-md-flex align-items-center justify-content-between">
+											<Card.Title as="h4">Entertainment Settings</Card.Title>
+										</div>
+									</Card.Header>
+									
+										<Card.Body>
+										<Row>  
+											
+											<Col xl={4} sm={6}>
+												<Form.Group>
+													{/* <Form.Label className="d-block mb-2">Tournament instruction link <a className="text-danger" data-tip data-for='global'>*</a></Form.Label> */}
+													<TagsInput values={entertainment}  onChange={tags => console.log(tags)}  result={setEntertainment} inputBool={showEntertainment}/>
+												</Form.Group>
+												<span className={`d-none`}>
+													<label className="pl-1 pt-0 text-danger">{''}</label>
+												</span>
+
+											</Col>
+										
+										</Row>
+									</Card.Body>
+									<Card.Footer>
+										<Row >
+												<Col sm={6}>
+													<Button variant="success" onClick={()=> setShowEntertainment(true)} className="float-left">Edit</Button>
+												</Col>
+												{
+												// permissions && permissions.editSetting &&
+													<Col sm={12}>
+														<Button variant="info" onClick={save} className="float-right"> Save </Button>
+													</Col>
+												}
+										</Row>
+									</Card.Footer>
+									
+								</Card>
+							</Form>
 							</Col>
 						</Row>
 					</Container>
